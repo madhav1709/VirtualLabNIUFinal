@@ -1,0 +1,219 @@
+﻿@page
+@model BoostConverterModel
+@{
+}
+
+<!-- Start Breadcrumb -->
+<ul class="breadcrumb">
+	<li><a href="/" target="_parent">Home</a></li>
+	<li class="active">Boost Converter</li>
+</ul>
+<!-- End Breadcrumb -->
+<br>
+<!-- Start Main Content -->
+<div class="col-sm-9 col-sm-push-3" id="contentwithleftnav">
+	<contenttext>
+		<h2 style="margin-top:10px;">Experiment 2 : Boost Converter</h2>
+		<br>
+		<strong>Concept</strong>
+		<p>
+			DC-DC Converters are power electronics circuits that convert a dc input voltage to a different dc output voltage level.
+		</p>
+		<center>
+			<img alt="banner-buckConverter" class="img-responsive" id="headerMainImage" src="~/images/experiments/buckConverter/banner.jpg">
+			<p>Figure 1: A buck converter on a printed circuit board</p>
+		</center>
+
+		<!-- Start drop-down Advantages DC-DC -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#advantages-dcdc">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Advantages of DC-DC Converter
+			</a>
+		</p>
+		<div class="collapse" id="advantages-dcdc" style="height: 0px;">
+			<ul>
+				<li>High efficiency.</li>
+				<li>Smaller components and less thermal management.</li>
+				<li>Output voltage can be either higher or lower than the input voltage.</li>
+			</ul>
+		</div>
+		<!-- End drop-down Advantages DC-DC -->
+		<!-- Start drop-down Theory -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#theory">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Theory
+			</a>
+		</p>
+		<div class="collapse" id="theory" style="height: 0px;">
+			<p align="justify">
+				A boost converter’s output voltage is always higher than the input voltage. Figure 2 shows the schematics of a boost
+				converter. It has a dc input voltage, a transistor working as a switch, an inductor and a capacitor forming a low pass
+				filter to smooth out the output voltage, and a load resistor. The diode provides a path for the inductor current when
+				the switch is opened and is reverse biased when the switch is closed.
+			</p>
+			<center>
+				<img alt="fig2-boostConverter" class="img-responsive" src="~/images/experiments/boostConverter/fig2.jpg">
+				<p>Figure 2. Schematics of a boost converter</p>
+			</center>
+			<p>When the switch is closed, the diode is reverse biased. The equivalent circuit is shown in Figure 3.</p>
+			<center>
+				<img alt="fig3-boostConverter" class="img-responsive" src="~/images/experiments/boostConverter/fig3.jpg">
+				<p>Figure 3. Equivalent circuit when the switch is closed</p>
+			</center>
+			<p>When the switch is open, the diode is forward biased. The equivalent circuit is shown in Figure 4.</p>
+			<center>
+				<img alt="fig4-boostConverter" class="img-responsive" src="~/images/experiments/boostConverter/fig4.jpg">
+				<p>Figure 4. Equivalent circuit when the switch is open</p>
+			</center>
+			<p>
+				Output voltage of a boost converter is controlled by a pulse width modulated (PWM) signal. The duty cycle is the ratio
+				between the on time and the switching period shown in (1). By adjusting the duty cycle, we can obtain desired output
+				voltage, which is shown in (2). When D increases, the output voltage increases. When D decreases, the output voltage decreases.
+			</p>
+			<br />
+			<center>
+				<img alt="fig5-boostConverter" class="img-responsive" src="~/images/experiments/boostConverter/fig5.jpg">
+				<p>Figure 5. Duty Cycle</p><br />
+				<img alt="fig6-boostConverter" class="img-responsive" src="~/images/experiments/boostConverter/fig6.jpg">
+			</center>
+			<p align="justify">
+				If the inductor current is continuous, the boost converter is operating in continuous conduction mode. If the inductor
+				current is reduced to zero, the boost converter is operating in discontinuous mode. We would like to keep the boost
+				converter operating in continuous conduction mode. The minimum inductance to keep the boost converter in continuous
+				conduction mode is the critical inductance. Value of the critical inductance is shown in (3).
+			</p><br />
+			<center>
+				<img alt="fig7-boostConverter" class="img-responsive" src="~/images/experiments/boostConverter/fig7.jpg">
+			</center><br />
+			<p align="justify">
+				Another basic DC-DC converter is buck-boost converter shown in Figure 6. The output voltage of a buck-boost converter
+				can be either higher or lower than the input voltage. Ratio of the output voltage over the input voltage is shown in (4). If
+				D>0.5, the output voltage is greater than the input voltage. if D < 0.5, the output voltage is less than the input voltage.
+			</p><br />
+			<center>
+				<img alt="fig8-boostConverter" class="img-responsive" src="~/images/experiments/boostConverter/fig8.jpg">
+				<p>Figure 6. Buck-boost converter</p><br />
+				<img alt="fig9-boostConverter" class="img-responsive" src="~/images/experiments/boostConverter/fig9.jpg">
+			</center><br />
+
+		</div>
+		<!-- End drop-down Theory -->
+		<!-- Start drop-down Learning Objective -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#learning-objectives">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Learning Objective
+			</a>
+		</p>
+		<div class="collapse" id="learning-objectives" style="height: 0px;">
+			<ol>
+				<li>Characteristics of buck converter</li>
+				<li>Capacitor and inductor selection</li>
+				<li>Output voltage and current</li>
+				<li>Continuous and discontinuous mode</li>
+			</ol>
+		</div>
+		<!-- End drop-down Learning Objective -->
+		<!-- Start drop-down Materials and Equipment -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#materials-equipment">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Materials and Equipment
+			</a>
+		</p>
+		<div class="collapse" id="materials-equipment" style="height: 0px;">
+			<ul>
+				<li>Power Supply</li>
+				<li>Capacitor</li>
+				<li>Inductor</li>
+				<li>Transistor</li>
+				<li>Diode</li>
+				<li>Resistor</li>
+			</ul>
+		</div>
+		<!-- End drop-down Materials and Equipment -->
+		<!-- Start drop-down Procedure -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#procedure">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Procedure
+			</a>
+		</p>
+		<div class="collapse" id="procedure" style="height: 0px;">
+			<ol>
+				<li>
+					Make connections of power supply, capacitor, inductor, transistor and load resistor to build the buck converter.
+					<br>Vin = 12; D = 0.4; C = 2000e-6; L = 150e-6; R = 50; RL = 0.1; Rc = 0.1;
+				</li>
+				<li>Check the circuit connections according to the schematics.</li>
+				<li>
+					Varying duty cycle
+					<ol type="I">
+						<li>Set the duty cycle at 40%, and switching frequency at 20 kHz.</li>
+						<li>Observe and measure the output voltage.</li>
+						<li>Vary the duty cycle from 20% to 80% with the interval of 10%.</li>
+						<li>Measure the output voltage for each of the duty cycle. Compare the measurement with theoretical calculation.</li>
+					</ol>
+				</li>
+				<li>
+					Varying switching frequency
+					<ol type="I">
+						<li>Set the duty cycle at 40%, and switching frequency at 20 kHz.</li>
+						<li>Observe and measure the output voltage ripple. Compare the measurement with theoretical calculation.</li>
+						<li>
+							Increase the switching frequency to 50 kHz. Observe and measure the output voltage ripple. Compare
+							the measurement with theoretical calculation.
+						</li>
+						<li>
+							Decrease the switching frequency to 10 kHz. Observe and measure the output voltage ripple. Compare
+							the measurement with theoretical calculation.
+						</li>
+					</ol>
+				</li>
+				<li>
+					Varying load resistor
+					<ol type="I">
+						<li>Set the duty cycle at 40%, and switching frequency at 20 kHz.</li>
+						<li>Measure the load current and output voltage when the load resistance is 20 Ω.</li>
+						<li>Measure the load current and output voltage when the load resistance is 10 Ω.</li>
+					</ol>
+				</li>
+				<li>
+					Closed loop voltage control
+					<ol type="I">
+						<li>Connect the references as shown in the figure.</li>
+						<li>
+							Enter the value of the desired output voltage ranging from 20-40V in the intervals of 5V, the controller
+							will compare the output voltage and the reference value and adjust the duty cycle accordingly.
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</div>
+		<!-- End drop-down Procedure -->
+		<!-- Start drop-down Questions -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#questions">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Questions
+			</a>
+		</p>
+		<div class="collapse" id="questions" style="height: 0px;">
+			<ol>
+				<!--
+				<li>A buck converter has the following parameters: D=0.4, L=400 μH, C=100 μF, f=20 kHz. What is the voltage ripple?</li>
+				<li>
+					A buck converter has an input voltage of 48V, output voltage of 18V across a 10 Ω. The switching frequency is
+					40 kHz. What is the minimum inductance to keep the buck converter in continuous conduction mode?
+				</li>
+				-->
+			</ol>
+		</div>
+		<!-- End drop-down Questions -->
+
+	</contenttext>
+
+</div>
+<!-- End Main Content -->

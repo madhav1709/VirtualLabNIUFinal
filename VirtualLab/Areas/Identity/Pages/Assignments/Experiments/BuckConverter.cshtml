@@ -1,0 +1,139 @@
+﻿@page
+@model BuckConverterModel
+@{
+}
+
+@section scripts {
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="~/js/practicalExperiments/buckConverter.js"></script>
+}
+<br>
+
+<link rel="stylesheet" type="text/css" href="~/css/practicalExperiments/buckConverter.css">
+<h2>Experiment - 1 : Buck Converter</h2>
+<div class="row">
+	<div class="col-md-8">
+		<div class="circuit-container js-circuit-container">
+			<span class="buck-circuit js-circuit"></span>
+
+			<span class="buck-circuit-connection a js-circuit-connection" id="zva"></span>
+			<span class="buck-circuit-connection b js-circuit-connection" id="yhb"></span>
+			<span class="buck-circuit-connection c js-circuit-connection" id="xvc"></span>
+			<span class="buck-circuit-connection d js-circuit-connection" id="whd"></span>
+			<span class="buck-circuit-connection e js-circuit-connection" id="vve"></span>
+			<span class="buck-circuit-connection f js-circuit-connection" id="uvf"></span>
+			<span class="buck-circuit-connection g js-circuit-connection" id="thg"></span>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="drag-container">
+			<div id="di21" class="drag-item">
+				<p>Resistor</p>
+				<img src="~/images/practicalExperiments/buckConverter/resistor.svg" id="avu" class="img-svg rotateimg90" />
+			</div>
+		</div>
+		<div class="drag-container">
+			<div id="di22" class="drag-item">
+				<p>Inductor</p>
+				<img src="~/images/practicalExperiments/buckConverter/inductor.svg" id="bhw" class="img-svg" />
+			</div>
+		</div>
+
+		<div class="drag-container">
+			<div id="di22" class="drag-item">
+				<p>Diode</p>
+				<img src="~/images/practicalExperiments/buckConverter/diode.svg" id="cvx" class="img-svg rotateimg90" />
+			</div>
+		</div>
+
+		<div class="drag-container">
+			<div id="di22" class="drag-item">
+				<p>Transistor</p>
+				<img src="~/images/practicalExperiments/buckConverter/transistor.svg" id="dhy" class="img-svg" />
+			</div>
+		</div>
+
+		<div class="drag-container">
+			<div id="di22" class="drag-item">
+				<p>Capacitor</p>
+				<img src="~/images/practicalExperiments/buckConverter/capacitor_elko.svg" id="evv" class="img-svg" />
+			</div>
+		</div>
+		<div class="drag-container">
+			<div id="di23" class="drag-item">
+				<p>Battery</p>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/archive/d/df/20070922204459%21Battery_symbol.svg"
+					 id="fvz" class="img-svg" />
+			</div>
+		</div>
+
+		<div class="drag-container">
+			<div id="di23" class="drag-item">
+				<p>PWM</p>
+				<img src="~/images/practicalExperiments/buckConverter/pwmSVG.svg" id="ght" class="img-svg" />
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<form>
+			<div class="form-group">
+				<label for="resistanceBuck">Resistance (Ω)</label>
+				<input type="number" min="0" step="0.0001" class="form-control" id="resistanceBuck" name="resistanceBuck"
+					   placeholder="Resistance (Ω)" required>
+			</div>
+
+			<div class="form-group">
+				<label for="inductanceBuck">Inductance (μH)</label>
+				<input type="number" min="0" step="0.0000000001" class="form-control" id="inductanceBuck" name="inductanceBuck"
+					   placeholder="Inductance (μH)" required>
+			</div>
+
+			<div class="form-group">
+				<label for="dutyCycleBuck">Duty Cycle (%)</label>
+				<input type="number" min="0" step="0.0001" class="form-control" id="dutyCycleBuck" name="dutyCycleBuck"
+					   placeholder="Duty Cycle (%)" required>
+			</div>
+
+			<div class="form-group">
+				<label for="capacitanceBuck">Capacitance (μF)</label>
+				<input type="number" min="0.0001" step="0.0000000001" class="form-control" id="capacitanceBuck"
+					   name="capacitanceBuck" placeholder="Capacitance (μF)" required>
+			</div>
+
+			<div class="form-group">
+				<label for="voltageInputBuck">Voltage Input (V)</label>
+				<input type="number" min="0" step="0.0001" class="form-control" id="voltageInputBuck" name="voltageInputBuck"
+					   placeholder="Voltage Input (V)" required>
+			</div>
+
+			<div class="form-group">
+				<label for="frequencyBuck">Frequency (kHz)</label>
+				<input type="number" min="0" step="1" class="form-control" id="frequencyBuck" name="frequencyBuck"
+					   placeholder="Frequency (kHz)" required>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<center><h3>Schematic Diagram</h3></center>
+		<div class="circuit-container js-circuit-container">
+
+			<span class="buck-circuit-auto js-circuit"></span>
+
+			<span class="buck-circuit-connection h" id="h"></span>
+			<span class="buck-circuit-connection i" id="i"></span>
+			<span class="buck-circuit-connection j" id="j"></span>
+			<span class="buck-circuit-connection k" id="k"></span>
+			<span class="buck-circuit-connection l" id="l"></span>
+			<span class="buck-circuit-connection m" id="m"></span>
+			<span class="buck-circuit-connection n" id="n"></span>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,206 @@
+﻿.grid .tick {
+	stroke: lightgrey;
+	opacity: 0.7;
+	shape-rendering: crispEdges;
+}
+
+.grid path {
+	stroke-width: 0;
+}
+
+.axis path {
+	fill: none;
+	stroke: #bbb;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: #555;
+}
+
+.axis line {
+	stroke: #e7e7e7;
+	shape-rendering: crispEdges;
+}
+
+.axis .axis-label {
+	font-size: 14px;
+}
+
+.line {
+	fill: none;
+	stroke-width: 1.5px;
+}
+
+.dot {
+	/* consider the stroke-with the mouse detect radius? */
+	stroke: transparent;
+	stroke-width: 10px;
+	cursor: pointer;
+}
+
+	.dot:hover {
+		stroke: rgba(68, 127, 255, 0.3);
+	}
+
+.circuit-container {
+	position: sticky;
+	display: block;
+	width: 800px;
+	height: 300px;
+	margin: 0;
+	margin-top: 20px;
+}
+
+.buck-circuit {
+	position: sticky;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(/images/practicalExperiments/buckConverter/practical.png) no-repeat;
+	background-size: 800px 300px;
+	z-index: 3;
+}
+
+.buck-circuit-auto {
+	position: sticky;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(/images/practicalExperiments/buckConverter/practical.png) no-repeat;
+	background-size: 800px 300px;
+	z-index: 3;
+}
+
+.buck-circuit-connection {
+	position: absolute;
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	z-index: 3;
+}
+
+	.buck-circuit-connection.a {
+		z-index: 3;
+		left: 36px;
+		top: 140px;
+	}
+
+	.buck-circuit-connection.b {
+		left: 240px;
+		top: 0px;
+		z-index: 2;
+	}
+
+	.buck-circuit-connection.c {
+		left: 307px;
+		top: 128px;
+	}
+
+	.buck-circuit-connection.d {
+		left: 474px;
+		top: 0px;
+		z-index: 2;
+	}
+
+	.buck-circuit-connection.e {
+		left: 578px;
+		top: 128px;
+	}
+
+	.buck-circuit-connection.f {
+		left: 669px;
+		top: 135px;
+	}
+
+	.buck-circuit-connection.g {
+		left: 152px;
+		top: 174px;
+	}
+
+	.buck-circuit-connection.h {
+		background-size: 80px 80px;
+		z-index: 3;
+		left: 36px;
+		top: 142px;
+	}
+
+	.buck-circuit-connection.i {
+		background-size: 80px 80px;
+		left: 239px;
+		top: 0px;
+	}
+
+	.buck-circuit-connection.j {
+		background-size: 80px 80px;
+		left: 308px;
+		top: 129px;
+	}
+
+	.buck-circuit-connection.k {
+		background-size: 80px 80px;
+		left: 473px;
+		top: 0px;
+	}
+
+	.buck-circuit-connection.l {
+		background-size: 80px 80px;
+		left: 579px;
+		top: 129px;
+	}
+
+	.buck-circuit-connection.m {
+		background-size: 80px 80px;
+		left: 670px;
+		top: 136px;
+	}
+
+	.buck-circuit-connection.n {
+		background-size: 80px 80px;
+		left: 153px;
+		top: 175px;
+	}
+
+.drag-container {
+	height: 40px;
+	width: 150px;
+	display: inline;
+}
+
+.drag-item {
+	padding: 5px;
+	margin: 10px;
+	width: 100px;
+	border-radius: 4px;
+	text-align: center;
+	display: inline-block;
+}
+
+.img-svg {
+	width: 80px;
+	height: 80px;
+}
+
+.rotateimg90 {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.rotateimg180 {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.rotateimg90minus {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}

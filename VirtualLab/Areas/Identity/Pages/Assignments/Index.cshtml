@@ -1,0 +1,91 @@
+﻿@page
+@model IndexModel
+@{
+}
+<br />
+<h3>Assignments</h3>
+
+<br>
+
+@if ((string)ViewData["Role"] == "Professor")
+{
+	<a href="/Identity/Assignments/AddAssignments">Add Assignments</a>
+}
+
+<hr />
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Assignment - 1</h5>
+				<p class="card-text">Buck Converter Experiment</p>
+				<a href="/Identity/Assignments/Experiments/BuckConverter" class="btn btn-primary">Go to Experiment</a>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<hr />
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Assignment - 2</h5>
+				<p class="card-text">Buck Converter Closed Experiment</p>
+				<a href="/Identity/Assignments/Experiments/BuckConverterClosed" class="btn btn-primary">Go to Experiment</a>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<hr />
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Assignment - 3</h5>
+				<p class="card-text">Boost Converter Experiment</p>
+				<a href="/Identity/Assignments/Experiments/BoostConverter" class="btn btn-primary">Go to Experiment</a>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<hr />
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Assignment - 4</h5>
+				<p class="card-text">Solar Panel Experiment</p>
+				<a href="/Identity/Assignments/Experiments/SolarPanel" class="btn btn-primary">Go to Experiment</a>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<hr />
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Assignment - 5</h5>
+				<p class="card-text">Solar Cells - Series Connection Experiment</p>
+				<a href="/Identity/Assignments/Experiments/SolarCellSeries" class="btn btn-primary">Go to Experiment</a>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<hr />
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Assignment - 6</h5>
+				<p class="card-text">Solar Cells - Parallel Connection Experiment</p>
+				<a href="/Identity/Assignments/Experiments/SolarCellParallel" class="btn btn-primary">Go to Experiment</a>
+			</div>
+		</div>
+	</div>
+</div>

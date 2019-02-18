@@ -1,0 +1,169 @@
+﻿@page
+@model SolarPanelModel
+@{
+}
+
+
+<!-- Start Breadcrumb -->
+<ul class="breadcrumb">
+	<li><a href="/" target="_parent">Home</a></li>
+	<li class="active">Solar Panel</li>
+</ul>
+<!-- End Breadcrumb -->
+<br>
+<!-- Start Main Content -->
+<div class="col-sm-9 col-sm-push-3" id="contentwithleftnav">
+	<contenttext>
+		<h2 style="margin-top:10px;">Experiment 3 : Solar Panel</h2>
+		<br>
+		<strong>Concept</strong>
+		<p>
+			Photovoltaic (PV) cells are semiconductors which become electrically conductive on exposure to light or heat.
+		</p>
+
+		<!-- Start drop-down Types of solar cell -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#advantages-dcdc">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Types of solar cell
+			</a>
+		</p>
+		<div class="collapse" id="advantages-dcdc" style="height: 0px;">
+			<p>
+				Solar cells can be divided into three groups based on raw material. Solar cells have an efficiency of about 10%.
+			</p>
+			<ol>
+				<li>
+					<b>Monocrystalline</b><br />
+					Highly pure silicon melt is used to grow mono-crystals in the form of round silicon blocks. A mono-crystal’s
+					lattice has an entirely homogeneous structure. The silicon block is sawed into wafers each 200 to 300 μm thick.
+				</li>
+				<li>
+					<b>Polycrystalline</b><br />
+					Highly pure silicon melt is also used as the initial material for polycrystalline cells. These cells are manufactured
+					through controlled cooling of the silicon melt in square-shaped moulds. During cooling, the crystals arrange themselves
+					in an irregular pattern resulting in an iridescent surface typical of polycrystalline solar cells.
+				</li>
+				<li>
+					<b>Thin-film</b><br />
+					<ol type="I">
+						<li>
+							Amorphous silicon cell<br />
+							To manufacture amorphous solar cells, silicon is vapour-deposited on a carrier, e.g. glass. The vapour-deposited
+							silicon layer has a thickness of 0.5 to 2 μm.
+						</li>
+						<li>Copper-indium-diselenide cell (CIS).</li>
+						<li>Gallium-arsenide (GaAs).</li>
+					</ol>
+				</li>
+			</ol>
+		</div>
+		<!-- End drop-down Types of solar cell -->
+		<!-- Start drop-down Theory -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#theory">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Theory
+			</a>
+		</p>
+		<div class="collapse" id="theory" style="height: 0px;">
+			<p>
+				A PV model can be expressed by the equivalent circuit shown in Figure 1.
+				<br />
+				Operational nominal and standard conditions for PV are shown in Table 1.
+				<br />
+				<center>
+					<table>
+						<tr>
+							<th>Normal Condidtion</th>
+							<th>Standard Condition</th>
+						</tr>
+						<tr>
+							<td>Irradiance: Ga,ref = 800 W/m2</td>
+							<td>Irradiance: Ga,0 = 1000 W/m2</td>
+						</tr>
+						<tr>
+							<td>Ambient temperature: Ta,ref = 20oC</td>
+							<td>Cell temperature: TOC = 25oC</td>
+						</tr>
+						<tr>
+							<td>Wind speed: 1 m/s</td>
+							<td></td>
+						</tr>
+					</table>
+				</center>
+			</p>
+			<p align="justify">
+				<b>Open-circuit voltage of a solar cell</b><br />
+				The open-circuit voltage VOC is the maximum voltage available from a solar cell. It is measured using a
+				volt meter connected across the solar cell when no load is connected, shown in Figure 2.
+			</p>
+			<center>
+				<img alt="fig2-solarPanel" class="img-responsive" src="~/images/experiments/solarPanel/fig2.jpg">
+				<p>Figure 2. Measuring open-circuit voltage</p><br />
+			</center>
+			<p align="justify">
+				<b>Short-circuit current of a PV cell</b><br />
+				The short-circuit current ISC is the maximum current a solar cell can supply. The current is measured 
+				using an ammeter connected directly across the solar cell, shown in Figure 3.
+			</p>
+			<center>
+				<img alt="fig3-solarPanel" class="img-responsive" src="~/images/experiments/solarPanel/fig2.jpg">
+				<p>Figure 3. Measuring short-circuit current</p><br />
+			</center>
+		</div>
+		<!-- End drop-down Theory -->
+		<!-- Start drop-down Learning Objective -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#learning-objectives">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Learning Objective
+			</a>
+		</p>
+		<div class="collapse" id="learning-objectives" style="height: 0px;">
+			<ol>
+				<li>Measuring open-circuit voltage of solar cells</li>
+				<li>Measuring short-circuit current of solar cells</li>
+			</ol>
+		</div>
+		<!-- End drop-down Learning Objective -->
+		<!-- Start drop-down Materials and Equipment -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#materials-equipment">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Materials and Equipment
+			</a>
+		</p>
+		<div class="collapse" id="materials-equipment" style="height: 0px;">
+			<ul>
+				<li>Solar Cells</li>
+				<li>Voltage Meter</li>
+				<li>Current Meter</li>
+			</ul>
+		</div>
+		<!-- End drop-down Materials and Equipment -->
+		<!-- Start drop-down Procedure -->
+		<p>
+			<a class="collapsed" data-toggle="collapse" href="#procedure">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				Procedure
+			</a>
+		</p>
+		<div class="collapse" id="procedure" style="height: 0px;">
+			<ol>
+				<li>
+					Connect a volt meter to a solar cell with no load connected to it. Set the irradiance to 1000 W/m2. Record the 
+					open-circuit voltage VOC. Vary the irradiance, and record the open-circuit voltage
+				</li>
+				<li>
+					Connect an ammeter to a solar cell directly. Measure the short-circuit current ISC. Vary the irradiance, 
+					and record the short-circuit current.
+				</li>
+			</ol>
+		</div>
+		<!-- End drop-down Procedure -->
+
+	</contenttext>
+
+</div>
+<!-- End Main Content -->

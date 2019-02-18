@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+
+<br>
+
+@if ((string)ViewData["Role"] == "Professor")
+{
+	<a href="/Identity/Course/AddAnnouncements">Add Announcement</a>
+}
+@if ((string)ViewData["Role"] == "Administrator")
+{
+	<a href="/Identity/Course/AddCourse">Add Course</a>
+}
+
+

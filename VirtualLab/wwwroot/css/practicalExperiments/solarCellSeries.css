@@ -1,0 +1,176 @@
+﻿
+.grid .tick {
+	stroke: lightgrey;
+	opacity: 0.7;
+	shape-rendering: crispEdges;
+}
+
+.grid path {
+	stroke-width: 0;
+}
+
+.axis path {
+	fill: none;
+	stroke: #bbb;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: #555;
+}
+
+.axis line {
+	stroke: #e7e7e7;
+	shape-rendering: crispEdges;
+}
+
+.axis .axis-label {
+	font-size: 14px;
+}
+
+.line {
+	fill: none;
+	stroke-width: 1.5px;
+}
+
+.dot {
+	/* consider the stroke-with the mouse detect radius? */
+	stroke: transparent;
+	stroke-width: 10px;
+	cursor: pointer;
+}
+
+	.dot:hover {
+		stroke: rgba(68, 127, 255, 0.3);
+	}
+
+.circuit-container {
+	position: sticky;
+	display: block;
+	width: 800px;
+	height: 300px;
+	margin: 0;
+	margin-top: 20px;
+}
+
+.solarCellSeries-circuit {
+	position: sticky;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(/images/practicalExperiments/solarCellsSeries/practical-two.png) no-repeat;
+	background-size: 800px 300px;
+	z-index: 3;
+}
+
+.solarCellSeries-circuit-auto {
+	position: sticky;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(/images/practicalExperiments/solarCellsSeries/practical-three.png) no-repeat;
+	background-size: 800px 300px;
+	z-index: 3;
+}
+
+.solarCellSeries-circuit-connection {
+	position: absolute;
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	z-index: 3;
+}
+
+	.solarCellSeries-circuit-connection.a {
+		left: 187px;
+		top: 5px;
+	}
+
+	.solarCellSeries-circuit-connection.b {
+		left: 364px;
+		top: 5px;
+	}
+
+	.solarCellSeries-circuit-connection.c {
+		left: 536px;
+		top: 5px;
+	}
+
+	.solarCellSeries-circuit-connection.d {
+		left: 237px;
+		top: 216px;
+	}
+
+	.solarCellSeries-circuit-connection.e {
+		left: 187px;
+		top: 5px;
+	}
+
+	.solarCellSeries-circuit-connection.f {
+		left: 363px;
+		top: 5px;
+	}
+
+	.solarCellSeries-circuit-connection.g {
+		left: 537px;
+		top: 5px;
+	}
+
+	.solarCellSeries-circuit-connection.h {
+		left: 259px;
+		top: 112px;
+	}
+
+	.solarCellSeries-circuit-connection.i {
+		left: 469px;
+		top: 112px;
+	}
+
+	.solarCellSeries-circuit-connection.j {
+		left: 239px;
+		top: 216px;
+	}
+
+.drag-container {
+	height: 40px;
+	width: 150px;
+	display: inline;
+}
+
+.drag-item {
+	padding: 5px;
+	margin: 10px;
+	width: 100px;
+	border-radius: 4px;
+	text-align: center;
+	display: inline-block;
+}
+
+.img-svg {
+	width: 80px;
+	height: 80px;
+}
+
+.rotateimg90 {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.rotateimg180 {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.rotateimg90minus {
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}

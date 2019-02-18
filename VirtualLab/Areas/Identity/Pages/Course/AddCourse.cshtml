@@ -1,0 +1,40 @@
+﻿@page
+@{
+}
+@model VirtualLab.Models.Course
+
+<h1>Add Course</h1>
+
+<form method="post">
+	<div class="form-group">
+		<lable asp-for="CourseName">Course Name</lable>
+		<input class="form-control" asp-for="CourseName" />
+		<span asp-validation-for="CourseName"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="YearAndSemester">Year and Semester</lable>
+		<input class="form-control" asp-for="YearAndSemester" />
+		<span asp-validation-for="YearAndSemester"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="ProfessorId">Professor ID</lable>
+		<input class="form-control" asp-for="ProfessorId" />
+		<span asp-validation-for="ProfessorId"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="ProfessorName">Professor Name</lable>
+		<input class="form-control" asp-for="ProfessorName" />
+		<span asp-validation-for="ProfessorName"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="StartDate">Start Date</lable>
+		<input class="form-control" asp-for="StartDate" />
+		<span asp-validation-for="StartDate"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="EndDate">End Date</lable>
+		<input class="form-control" asp-for="EndDate" />
+		<span asp-validation-for="EndDate"></span>
+	</div>
+	<input type="submit" class="btn btn-primary" name="save" value="Save" />
+</form>

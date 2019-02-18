@@ -1,0 +1,69 @@
+﻿@page
+@model BuckConverterClosedModel
+@{
+}
+
+@section scripts {
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="~/js/practicalExperiments/buckConverterClosed.js"></script>
+}
+<br>
+
+<link rel="stylesheet" type="text/css" href="~/css/practicalExperiments/buckConverterClosed.css">
+<h2>Experiment - 2 : Buck Converter Closed</h2>
+<div class="row">
+	<div class="col-md-8">
+		<div class="circuit-container js-circuit-container">
+			<span class="buck-circuit js-circuit"></span>
+
+			<span class="buck-circuit-connection a js-circuit-connection" id="zva"></span>
+			<span class="buck-circuit-connection b js-circuit-connection" id="yvb"></span>
+			<span class="buck-circuit-connection c js-circuit-connection" id="xvc"></span>
+			<span class="buck-circuit-connection d js-circuit-connection" id="wvd"></span>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="drag-container">
+			<div id="di21" class="drag-item">
+				<img src="~/images/practicalExperiments/buckConverterClosed/bc.png" id="avx" class="img-svg" />
+			</div>
+		</div>
+		<div class="drag-container">
+			<div id="di22" class="drag-item">
+				<img src="~/images/practicalExperiments/buckConverterClosed/dc.png" id="bvy" class="img-svg" />
+			</div>
+		</div>
+
+		<div class="drag-container">
+			<div id="di22" class="drag-item">
+				<img src="~/images/practicalExperiments/buckConverterClosed/fc.png" id="cvz" class="img-svg" />
+			</div>
+		</div>
+
+		<div class="drag-container">
+			<div id="di22" class="drag-item">
+				<img src="~/images/practicalExperiments/buckConverterClosed/ssc.png" id="dvw" class="img-svg" />
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<form>
+			
+			<div class="form-group">
+				<label for="outputVoltageBuckClosed">Output Voltage (V)</label>
+				<input type="number" min="0" step="0.0001" class="form-control" id="outputVoltageBuckClosed" name="outputVoltageBuckClosed"
+					   placeholder="Output Voltage (V)" required>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	<div class="col-md-6">
+		
+	</div>
+</div>

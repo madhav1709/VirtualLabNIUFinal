@@ -1,0 +1,35 @@
+﻿@page
+@model VirtualLab.Models.Assignments
+@{
+}
+
+<h1>Add Assignment</h1>
+
+<form method="post">
+	<div class="form-group">
+		<lable asp-for="CourseId">Course ID</lable>
+		<input class="form-control" asp-for="CourseId" />
+		<span asp-validation-for="CourseId"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="Title">Title</lable>
+		<input class="form-control" asp-for="Title" />
+		<span asp-validation-for="Title"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="Content">Content</lable>
+		<input class="form-control" asp-for="Content" />
+		<span asp-validation-for="Content"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="AssignmentDueDate">Assignment Due Date</lable>
+		<input class="form-control" asp-for="AssignmentDueDate" />
+		<span asp-validation-for="AssignmentDueDate"></span>
+	</div>
+	<div class="form-group">
+		<lable asp-for="MaximumGrade">Maximum Grade</lable>
+		<input class="form-control" asp-for="MaximumGrade" />
+		<span asp-validation-for="MaximumGrade"></span>
+	</div>
+	<input type="submit" class="btn btn-primary" name="save" value="Save" />
+</form>
