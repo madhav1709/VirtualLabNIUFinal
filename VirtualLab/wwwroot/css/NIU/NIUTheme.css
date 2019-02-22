@@ -1,0 +1,2755 @@
+﻿@charset "utf-8";
+/* This is a main NIU theme CSS Document */
+body {
+	background-color: #ededed;
+}
+	/* Eliminate a <br> that gets added to the code before the content display */
+	body br {
+		display: none;
+	}
+/* Allows Screen Readers to Read the Skip Navigation links without them displaying on the page or altering the layout */
+#skip_nav {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+	#skip_nav a:focus {
+		position: static;
+		width: auto;
+		height: auto;
+	}
+
+	#skip_nav.hide {
+		display: block !important
+	}
+
+.container br {
+	display: block;
+}
+
+.container {
+	background-color: transparent;
+}
+
+header {
+	margin: 0 auto;
+	padding: 1em 0em 0em;
+	background-color: #fff;
+}
+
+	header.home {
+		background-color: transparent;
+	}
+	/* header div.info-for, header div.search {
+	 padding:0em;
+}
+ */
+	/*** Branding ***/
+	header h1 a, header h1 a:visited {
+		color: #000;
+	}
+
+		header h1 a:hover {
+			color: #000;
+			text-decoration: none;
+		}
+/* * this targets IE to respect aspect ratios and sizes for img tags containing SVG files in the header element * * [1] IE9 * [2] IE10+ */
+/* 1 */
+.ie9 img[src*=".svg"] {
+	width: 100%;
+}
+/* 2 */
+/* @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	 header h1 img[src*=".svg"] {
+		 width: 100%;
+	}
+}
+*/
+/****** search elements ******/
+.search {
+	float: right !important;
+	margin: 1em 1em 1em;
+}
+
+	.search .input-group {
+		float: left;
+		margin-right: .25em;
+	}
+
+	.search button.btn {
+		background-color: #333;
+		color: #ffffff;
+		padding: 9px 12px;
+	}
+/****** global nav elements ******/
+ul.navbar-nav.global {
+	list-style: none;
+	margin-top: 0em;
+	/*1em*/
+}
+
+	ul.navbar-nav.global a {
+		color: #222;
+		text-align: center;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-right: 14px;
+		padding-left: 5px;
+	}
+
+	ul.navbar-nav.global li.login a {
+		background-color: #cc0000;
+		color: #fff;
+		margin-right: 1em;
+	}
+
+		ul.navbar-nav.global li.login a:hover {
+			background-color: #ffffff;
+			color: #cc0000;
+		}
+
+	ul.navbar-nav.global li.login ul.dropdown-menu {
+		background-color: #cc0000;
+		border-top: 1px solid #fff;
+		z-index: 10000;
+	}
+
+		ul.navbar-nav.global li.login ul.dropdown-menu li a {
+			color: #fff;
+			margin-right: 0em;
+		}
+
+			ul.navbar-nav.global li.login ul.dropdown-menu li a:hover {
+				background-color: #ffffff;
+				color: #cc0000;
+			}
+	/****** NEW global nav elements ******/
+	ul.navbar-nav.global li ul.dropdown-menu.quicklinks {
+		background-color: #cc0000;
+		border-top: 1px solid #cc0000;
+		z-index: 10000;
+	}
+
+		ul.navbar-nav.global li ul.dropdown-menu.quicklinks li a {
+			color: #fff;
+			margin-right: 0em;
+		}
+
+			ul.navbar-nav.global li ul.dropdown-menu.quicklinks li a:hover {
+				background-color: #ffffff;
+				color: #cc0000;
+			}
+
+ul.nav.nav-pills.audience-ribbon {
+	/*background-color:#cc0000;
+	 */
+	margin-bottom: -1em;
+	font-size: .9em;
+	float: left !important;
+	margin-right: 0em !important;
+}
+
+	ul.nav.nav-pills.audience-ribbon li a {
+		padding: 9px 10px;
+		color: #000;
+	}
+
+		ul.nav.nav-pills.audience-ribbon li a:hover {
+			border-radius: 0px;
+		}
+/* New Audience ribbon element */
+.audience-ribbon {
+	background-color: #cdcdcd;
+	float: left;
+	width: 100%;
+	/*added to resolve the col-xx-xx issues in older IE for this container*/
+}
+
+	.audience-ribbon h4 {
+		float: left;
+		padding: 2px 0.5em;
+		font-size: 1em;
+		font-weight: 700;
+	}
+
+	.audience-ribbon ul.nav.nav-pills {
+		margin-bottom: 0;
+		font-size: .9em;
+		float: left !important;
+		margin-right: 0em !important;
+	}
+
+		.audience-ribbon ul.nav.nav-pills li a {
+			padding: 11px 10px 9px;
+			/*padding:5px 10px;
+	 */
+			color: #000;
+		}
+
+			.audience-ribbon ul.nav.nav-pills li a:hover {
+				border-radius: 0px;
+			}
+/* New Info Bar Navigation - Main site only */
+.audience-ribbon-main {
+	background-color: #cdcdcd;
+	float: left;
+	width: 100%;
+	padding: 0;
+	/*added to resolve the col-xx-xx issues in older IE for this container*/
+}
+
+	.audience-ribbon-main h4 {
+		float: left;
+		padding: 2px;
+		font-size: 1em;
+		font-weight: 700;
+	}
+
+	.audience-ribbon-main ul.nav.nav-pills {
+		margin-bottom: 0;
+		font-size: .9em;
+		/* float:left !important;
+	 margin-right:0em !important;
+	*/
+	}
+
+		.audience-ribbon-main ul.nav.nav-pills li a {
+			padding: 11px 10px 9px;
+			/*padding:5px 10px;
+	 */
+			color: #000;
+		}
+
+			.audience-ribbon-main ul.nav.nav-pills li a:last-child {
+				padding: 11px 1em 9px;
+				color: #000;
+			}
+
+			.audience-ribbon-main ul.nav.nav-pills li a:hover {
+				border-radius: 0px;
+			}
+
+		.audience-ribbon-main ul.nav.nav-pills li.apply a.apply {
+			color: #fff;
+			background-color: #cc0000;
+			padding-right: 20px;
+			padding-left: 20px;
+			border-radius: 0px;
+		}
+/****** main nav elements ******/
+.navbar-inverse {
+	/*this overrides Bootstrap default values*/
+	background-color: #000000;
+	border-color: #000000;
+}
+
+.navbar.mainnav {
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+.navbar-collapse.main {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+ul.nav.navbar-nav.main {
+	background-color: #000;
+	margin: 0;
+}
+
+.navbar.mainnav .nav > li {
+	z-index: 1000;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li.lienactif > a:hover, .navbar-inverse .navbar-nav > li.lienactif > a:hover, .navbar-default .navbar-nav > li.lienactif > a:focus, .navbar-inverse .navbar-nav > li.lienactif > a:focus {
+	background: none;
+	outline: auto;
+}
+
+.navbar.mainnav .nav > li.dropdown.red {
+	background-color: #c00;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+	color: #333;
+	background-color: #ffffff;
+	opacity: .95;
+}
+
+.navbar-toggle {
+	float: left;
+	margin-left: 1em;
+}
+
+.navbar-header p {
+	/*Set the Main Navigation text next to the Menu button in XS View*/
+	color: #FFF;
+	font-size: 16px;
+	margin-top: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	font-family: 'Sanchez',serif;
+	font-weight: 700;
+}
+
+ul.nav.navbar-nav.main ul li.dropdown a {
+	padding: 1em 2.37em;
+	/* Change left-right padding per screen size*/
+	/*padding:1em 1.47em;
+	 Change left-right padding for med resolution*/
+	color: #fff;
+}
+
+li.donate a.donate {
+	color: #fff;
+	background-color: #cc0000;
+	padding-right: 23px;
+	padding-left: 23px;
+}
+
+li.dropdown a.red-nav {
+	color: #fff;
+	background-color: #cc0000;
+	padding-right: 23px;
+	padding-left: 23px;
+}
+
+.dropdown-menu.mega {
+	width: 44em;
+	opacity: .9;
+	padding: 1em;
+	border: 0px;
+}
+
+	.dropdown-menu.mega p {
+		font-size: 1em;
+		font-family: 'Sanchez',serif;
+		font-weight: 700;
+		margin-bottom: 0px;
+	}
+
+ul.nav.navbar-nav.main li ul.megamenu-list {
+	list-style: none;
+	padding: .5em 0em 0em 0em;
+	border: 0px solid;
+}
+
+	ul.nav.navbar-nav.main li ul.megamenu-list li {
+		line-height: 1.25em;
+		margin-bottom: 1em;
+	}
+
+		ul.nav.navbar-nav.main li ul.megamenu-list li a {
+			color: #cc0000;
+		}
+
+			ul.nav.navbar-nav.main li ul.megamenu-list li a[href^="http:"]:after, ul.nav.navbar-nav.main li ul.megamenu-list li a[href^="https:"]:after {
+				/* Adds glyphicon-new-window icon after main nav links to external websites */
+				font-family: 'Glyphicons Halflings';
+				content: "\e164";
+				font-size: .7em;
+				padding-left: .5em;
+				color: grey;
+			}
+/****** main nav elements - no mega menus ******/
+.dropdown-menu {
+	opacity: .9;
+	padding: 1em;
+	border: 0px;
+}
+
+	.dropdown-menu p {
+		font-size: 1em;
+		font-family: 'Sanchez',serif;
+		font-weight: 700;
+		margin-bottom: 0px;
+	}
+
+ul.nav.navbar-nav.main li ul.dropdown-menu {
+	list-style: none;
+	padding: .5em 0em 0em 0em;
+	border: 0px solid;
+}
+
+	ul.nav.navbar-nav.main li ul.dropdown-menu li {
+		line-height: 1.25em;
+		margin-bottom: 1em;
+	}
+
+		ul.nav.navbar-nav.main li ul.dropdown-menu li a {
+			color: #cc0000;
+		}
+/****** end main nav elements ******/
+.breadcrumb {
+	padding: 8px 15px;
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+#main-carousel {
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.carousel-caption {
+	/*right: 58%;
+	 */
+	left: 2%;
+	padding: 1.5em;
+	background-color: #222;
+	opacity: .8;
+	text-align: left;
+}
+
+	.carousel-caption h2 {
+		font-family: 'Sanchez',serif;
+		font-weight: 400;
+		margin-top: 0px;
+	}
+
+		.carousel-caption h2 a {
+			color: #ffffff
+		}
+/****** newsroom feature element-home page only ******/
+.newsroom-feature {
+	background-color: #cc0000;
+	position: relative;
+	top: -1.5em;
+	left: 0px;
+	padding: .5em .5em .15em .5em;
+}
+/****** home-features elements ******/
+.home-features {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background-color: #fff;
+	padding-bottom: 1em;
+}
+
+	.home-features h3 {
+		background-color: #222;
+		color: #fff;
+		display: block;
+		padding: .5em .5em;
+		font-size: 1.35em;
+	}
+
+		.home-features h3 small a {
+			text-align: right;
+			color: #fff;
+			float: right;
+			font-size: .8em;
+			padding-top: 5px;
+		}
+
+#news-carousel {
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+	#news-carousel .item.active {
+		height: auto;
+	}
+
+	#news-carousel .carousel-caption {
+		position: relative;
+		right: 5%;
+		left: 0%;
+		top: 0px;
+		padding: 0em;
+		background-color: #fff;
+		opacity: .8;
+		text-align: left;
+		color: #222;
+		text-shadow: 0 0 0;
+	}
+
+		#news-carousel .carousel-caption h4 a {
+			color: #222;
+		}
+
+	#news-carousel .carousel-indicators li {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		margin: 1px 10px 1px 1px;
+		text-indent: -999px;
+		cursor: pointer;
+		background-color: #ccc;
+		border: 1px solid #FFF;
+		border-radius: 0px;
+	}
+
+	#news-carousel .carousel-indicators .active {
+		width: 13px;
+		height: 13px;
+		margin: 1px 10px 1px 1px;
+		background-color: #FFF;
+		border: 1px solid #666;
+	}
+
+.home-features .panel-heading, .home-features .panel-body {
+	padding: 0px 0px;
+}
+
+	.home-features .panel-body p {
+		margin-bottom: 0px;
+	}
+
+		.home-features .panel-body p a.alumniadvice {
+			position: relative;
+			display: block;
+			padding: 10px 15px;
+			background-color: #cc0000;
+			color: #FFF;
+		}
+
+ul.nav.nav-stacked.careers li a {
+	background-color: #cc0000;
+	color: #fff;
+}
+/* Round buttons minimally */
+.btn, .btn-sm, .btn-lg, .btn-xl {
+	border-radius: 2px;
+}
+/*** Make btn-primary use NIU red ***/
+.btn-primary {
+	color: #fff;
+	background-color: #c00;
+	border-color: #c00;
+}
+
+	.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+		color: #fff;
+		background-color: #ac0000;
+		border-color: #ac0000;
+	}
+
+	.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
+		background-color: #c00;
+		border-color: #c00;
+	}
+
+/*** Make btn-default use NIU Gray ***/
+.btn-default {
+	color: #000;
+	background-color: #a5a7a8;
+	border-color: #a5a7a8;
+}
+
+	.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+		color: #000;
+		background-color: #ededed;
+		border-color: #ededed;
+	}
+
+	.btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-primary.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active {
+		background-color: #a5a7a8;
+		border-color: #a5a7a8;
+	}
+
+/*** Make btn-success use NIU Green***/
+.btn-success {
+	color: #fff;
+	background-color: #43B02A;
+	border-color: #43B02A;
+}
+
+	.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
+		color: #fff;
+		background-color: #43B02A;
+		border-color: #43B02A;
+	}
+
+	.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
+		background-color: #43B02A;
+		border-color: #43B02A;
+	}
+
+/*** Make btn-warning use NIU  Yellow***/
+.btn-warning {
+	color: #000;
+	background-color: #FEDB00;
+	border-color: #FEDB00;
+}
+
+	.btn-warning :hover, .btn-warning :focus, .btn-success:active, .btn-warning .active, .open > .dropdown-toggle.btn-warning {
+		color: #000;
+		background-color: #FEDB00;
+		border-color: #FEDB00;
+	}
+
+	.btn-warning.disabled, .btn-warning [disabled], fieldset[disabled] .btn-warning, .btn-warning .disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover, .btn-warning.disabled:focus, .btn-warning[disabled]:focus, fieldset[disabled] .btn-warning:focus, .btn-warning.disabled:active, .btn-warning[disabled]:active, fieldset[disabled] .btn-warning:active, .btn-warning.disabled.active, .btn-warning[disabled].active, fieldset[disabled] .btn-success.active {
+		background-color: #FEDB00;
+		border-color: #FEDB00;
+	}
+/*** Make btn-info use NIU lt blue**/
+.btn-info {
+	color: #000;
+	background-color: #00A9E0;
+	border-color: #00A9E0;
+}
+
+	.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+		color: #000;
+		background-color: #00A9E0;
+		border-color: #00A9E0;
+	}
+
+	.btn-info.disabled, .btn-info[disabled], fieldset[disabled] .info, .btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover, .btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus, .btn-info.disabled:active, .btn-info[disabled]:active, fieldset[disabled] .btn-info:active, .btn-info.disabled.active, .btn-info[disabled].active, fieldset[disabled] .btn-info.active {
+		background-color: #00A9E0;
+		border-color: #00A9E0;
+	}
+
+.btn-link, .btn-link:hover, .btn-link:focus {
+	color: #c00;
+}
+/* allow for word wrapping in button */
+.btn-wrap {
+	white-space: normal;
+}
+/*** For use with hide/show content elements on a page ***/
+blockquote > p, blockquote > ol, blockquote > ul {
+	font-size: 14px;
+}
+/*** Text Alignment Classes - Use instead of WYSIWYG Center, Right, and Justify to maintain element tag ***/
+.right {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.justify {
+	text-align: justify;
+}
+/*** Calendar Styles ***/
+.blackbgfade {
+	/**applies soft grad background behind text over images**/
+	position: relative;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+	/* IE6-9 */
+	z-index: 9;
+	/**set related image to z-index:8 and related text to z-index:10 **/
+	padding-bottom: 9px;
+}
+
+/** remove old localist calendar styles **/
+/** 
+ ul#lwe {
+	 padding-left:0;
+}
+ #lw li.lwe a{
+	 color:#cc0000;
+}
+ .lwn span.lwn0 {
+	 font-weight: normal;
+	 float: left;
+	 font-size: 14px;
+	 color: #444;
+	 max-width:4em;
+	 margin-right: 1em;
+	 margin-bottom: 0em;
+}
+ .lwl {
+	 font-weight: bold;
+	 padding-top:0px;
+	 color: #222;
+	 font-size: 12px;
+	 line-height: 14px;
+	 overflow: hidden;
+	 clear: both;
+	 margin-left:5em;
+}
+**/
+
+/** End localist styles **/
+
+/****** Hide Google Search Forms until PG Fixes the Index ******/
+.customGoogle {
+	display: none;
+}
+/****** Responsive Embed - Home page and elsewhere ******/
+.embed-responsive-item, iframe, embed, object, video {
+	/* position: absolute;
+	 */
+	top: 0;
+	left: 0;
+	bottom: 0;
+	/* height: 100%;
+	 */
+	width: 100%;
+	border: 0;
+}
+/*/
+ / Modifier class for 16:9 aspect ratio*/
+.embed-responsive-16by9 {
+	padding-bottom: 56.25%;
+}
+/*/
+ / Modifier class for 4:3 aspect ratio*/
+.embed-responsive-4by3 {
+	padding-bottom: 75%;
+}
+/****** main content elements ******/
+/** #headerMainImage{
+	 margin-bottom:1em;
+}
+**/
+.main-content {
+	background-color: #ffffff;
+	padding-bottom: 55px;
+}
+
+	.main-content h2, h3, h4 {
+		font-family: 'Sanchez',serif;
+	}
+
+	.main-content h2 {
+		font-weight: 400;
+	}
+
+		.main-content h2 img {
+			/* adds margin between page main heading and main image contained in h2 */
+			margin-top: .75em;
+		}
+
+	.main-content h3, .main-content h4 {
+		font-weight: 400;
+	}
+
+	.main-content h5 {
+		font-size: 14.5px;
+		font-weight: bold;
+		font-family: 'Sanchez',serif;
+	}
+
+a, a:hover, a:focus {
+	color: #cc0000;
+}
+
+.newsroom-feature a {
+	color: #ffffff;
+}
+
+.lead {
+	/* Don't override color;
+	 also overrides combinations like .lead.text-success */
+	font-family: 'Sanchez',serif;
+	margin-bottom: 10px;
+}
+/** Left Nav Static Blocks **/
+.panel-body.leftnav {
+	padding: 15px 0px;
+	clear: both;
+}
+
+	.panel-body.leftnav ul.nav.nav-stacked li a {
+		background-color: #cc0000;
+		color: #fff;
+		margin-bottom: 2px;
+	}
+
+		.panel-body.leftnav ul.nav.nav-stacked li a strong {
+			font-family: 'Sanchez',serif;
+			font-weight: 700;
+		}
+
+	.panel-body.leftnav ul.nav.nav-stacked li strong a {
+		font-family: "Sanchez",serif;
+		font-weight: 700;
+		padding: 10px 15px;
+		/*position: relative;
+	 may not need this */
+		display: block;
+	}
+
+	.panel-body.leftnav ul.nav.nav-stacked li a[href^="http:"]:after, .panel-body.leftnav ul.nav.nav-stacked li a[href^="https:"]:after {
+		/* Adds glyphicon-new-window icon after main nav links to external websites */
+		font-family: 'Glyphicons Halflings';
+		content: "\e164";
+		/*font-size:.7em;
+	*/
+		padding-left: .5em;
+		color: #fff;
+	}
+
+.list-group-item {
+	border: 1px solid #DDD;
+	/** Sets border around left nav sublinks to 0px by default **/
+}
+
+.panel-body.leftnav ul.nav.nav-stacked li ul.list-group li.list-group-item {
+	background-color: #fff;
+	color: #cc0000;
+	border-radius: 0px;
+}
+
+	.panel-body.leftnav ul.nav.nav-stacked li ul.list-group li.list-group-item a {
+		background-color: #fff;
+		color: #cc0000;
+		border: 0px;
+	}
+
+.panel-body.leftnav li.list-group-item a {
+	border: 1px solid #DDD;
+}
+
+.panel-body.leftnav ul.nav.nav-stacked li ul.list-group li.list-group-item a[href^="http:"]:after, .panel-body.leftnav ul.nav.nav-stacked li ul.list-group li.list-group-item a[href^="https:"]:after {
+	/* Adds glyphicon-new-window icon after main nav links to external websites */
+	font-family: 'Glyphicons Halflings';
+	content: "\e164";
+	/*font-size:.7em;
+	*/
+	padding-left: .5em;
+	color: #999;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+	z-index: 2;
+	color: #FFF;
+	border-radius: 0;
+	border-color: #ddd;
+	background-color: #ffffff;
+	border-top: 1px #dddddd solid;
+	border-right: 1px #dddddd solid;
+	border-bottom: 1px #dddddd solid;
+	border-left: 4px #cc0000 solid;
+	/*1px #dddddd solid;
+	*/
+	/*Sets/removes the red active indicator on left nav subnav links */
+}
+
+div.well.contact-block {
+	position: relative;
+	top: 0em;
+	left: 0;
+}
+
+div.rightColHightlight {
+	position: relative;
+	top: 0em;
+	left: 0;
+}
+/** Left Nav Dynamic Blocks **/
+.panel-body.leftnav .panel-group .panel-default {
+	border: none;
+}
+
+	.panel-body.leftnav .panel-group .panel-default > .panel-heading {
+		padding: 0px 0px;
+	}
+
+		.panel-body.leftnav .panel-group .panel-default > .panel-heading a {
+			background-color: #cc0000;
+			color: #fff;
+			font-family: 'Sanchez',serif;
+			font-weight: 700;
+			display: block;
+			padding: 10px 15px;
+		}
+
+.panel-body.leftnav .panel-group.panel-heading + .panel-collapse > .panel-body {
+	border-top: none;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-radius: 0px;
+}
+
+.panel-body.leftnav .panel-group .panel-body {
+	padding: 0px;
+}
+
+	.panel-body.leftnav .panel-group .panel-body ul li a strong {
+		font-family: 'Sanchez',serif;
+		font-weight: 700;
+	}
+
+	.panel-body.leftnav .panel-group .panel-body ul li ul.list-group li.list-group-item {
+		background-color: #fff;
+		color: #cc0000;
+		border-radius: 0px;
+		border: 0px;
+	}
+
+		.panel-body.leftnav .panel-group .panel-body ul li ul.list-group li.list-group-item a {
+			background-color: #fff;
+			color: #cc0000;
+		}
+
+.panel-body.leftnav .panel-group .panel-heading .accordion-toggle:after {
+	/* symbol for "opening" panels */
+	font-family: 'Glyphicons Halflings';
+	/* essential for enabling glyphicon */
+	content: "\e114";
+	/* adjust as needed, taken from bootstrap.css */
+	float: right;
+	/* adjust as needed */
+	color: white;
+	/* adjust as needed */
+}
+
+.panel-body.leftnav .panel-group .panel-heading .accordion-toggle.collapsed:after {
+	/* symbol for "collapsed" panels */
+	content: "\e080";
+	/* adjust as needed, taken from bootstrap.css */
+}
+/*** contentwithleftnav container ***/
+#headerMainImage {
+	/** sets a 1em margin-bottom tag to the main image to add some space to the elements that follow it **/
+	margin-bottom: 1em;
+}
+
+.col-lg-4 h4:first-child {
+	/**aligns top spacing of h4 in 2nd column used as right column under a mainHeaderImage with <p> content in the adjacent two columns, desktop**/
+	margin-top: 0px;
+}
+
+.col-md-4 h4:first-child {
+	/**aligns top spacing of h4 in 2nd column used as right column under a mainHeaderImage with <p> content in the adjacent two columns, laptop**/
+	margin-top: 0px;
+}
+
+.col-sm-4 h4:first-child {
+	/**aligns top spacing of h4 in 2nd column used as right column under a mainHeaderImage with <p> content in the adjacent two columns, tablet**/
+	margin-top: 0px;
+}
+/** Right Column Related links **/
+ul.nav.nav-stacked li a {
+	background-color: #222;
+	color: #fff;
+}
+
+ul.nav.nav-stacked li strong a {
+	font-family: 'Sanchez',serif;
+	font-weight: 700;
+	color: #fff;
+}
+
+ul.nav.nav-stacked li ul.list-group li.list-group-item {
+	background-color: #fff;
+	color: #cc0000;
+	border-radius: 0px;
+}
+
+	ul.nav.nav-stacked li ul.list-group li.list-group-item a {
+		background-color: #fff;
+		color: #cc0000;
+	}
+/** in lieu of pull-right and pull-left classes from Bootstrap**/
+.imageright {
+	float: right !important;
+	margin-left: 20px;
+	margin-bottom: 1em;
+}
+
+.imageleft {
+	float: left !important;
+	margin-right: 20px;
+	margin-bottom: 1em;
+}
+/****** footer elements ******/
+footer.home {
+	background-color: #222;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+footer {
+	background-color: #222;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+	footer h3, footer p, footer li {
+		color: #fff;
+	}
+
+	footer h3 {
+		font-size: 1.35em;
+	}
+
+	footer p, footer li {
+		font-size: .8em;
+	}
+
+	footer a, footer a:visited, footer a:hover {
+		color: #fff;
+	}
+
+	footer p {
+		text-align: center;
+	}
+
+		footer p a:hover, footer li a:hover {
+			color: #fff;
+			text-decoration: underline;
+		}
+
+	footer ul.about-list {
+		list-style-type: none;
+		border-left: 1px solid #fff;
+		line-height: 1.5em;
+		padding-left: .5em;
+	}
+
+	footer .athletics {
+		position: relative;
+		top: -40px;
+	}
+
+	footer .social {
+		position: relative;
+		top: 25px;
+	}
+
+	footer .social-link {
+		margin-right: .5em;
+	}
+
+	footer .niu-home {
+		position: relative;
+		top: -32px;
+	}
+
+@media(max-width:767px) {
+	/* Smartphone View*/
+	.navbar.mobilenav {
+		background-color: #fff;
+		margin-bottom: 0px;
+	}
+
+		.navbar.mobilenav button {
+			/*float:right;
+		 */
+		}
+			/*	 .navbar.mobilenav button.navbar-toggle {
+		 height:36px;
+		 width:44px;
+		 border-color: #333;
+		 background-color:#333;
+		 color:#fff;
+		 font-size:1em;
+		 margin-top:3px;
+		 margin-bottom:3px;
+		 margin-right: 1%;
+	} */
+			.navbar.mobilenav button.navbar-toggle {
+				height: 36px;
+				/* width: 44px; */
+				border-color: #333;
+				background-color: #333;
+				color: #fff;
+				font-size: 1em;
+				margin-top: 3px;
+				margin-bottom: 3px;
+				margin-right: 1%;
+				margin-left: 3px;
+				padding: 6px 12px;
+			}
+
+		.navbar.mobilenav .navbar-toggle .icon-bar {
+			background-color: #fff;
+		}
+	/*** Branding ***/
+	header h1 {
+		color: #000;
+		font-size: 1.15em;
+		font-family: 'LucidaBri-Dem', serif;
+		font-style: normal;
+		font-weight: 400;
+		margin-top: 0em;
+		margin-left: 0em;
+		margin-bottom: 0em;
+		padding-top: 0em;
+		line-height: 1.15em;
+	}
+
+		header h1 img {
+			float: left;
+			margin-top: -2px;
+			margin-bottom: .5em;
+			margin-right: .5em;
+			max-width: 45px !important;
+		}
+
+			header h1 img[src*="niu-logo-main.svg"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 300px !important;
+			}
+
+			header h1 img[src*="NI_R_P20_Network_logo.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 200px !important;
+			}
+
+			header h1 img[src*="credit-union-logo.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 285px !important;
+			}
+
+			header h1 img[src*="financial-literacy-logo-sml.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 236px !important;
+			}
+
+		header h1 span.niu-text {
+			color: #000;
+			font-size: 0.6em;
+			font-family: 'LucidaBri-Dem', serif;
+			font-style: normal;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-left: 0em;
+		}
+
+	span.tagline {
+		color: #c00;
+		font-size: .63em;
+		font-family: 'LucidaBri-DemIta', serif;
+		font-weight: 500;
+		font-weight: normal;
+	}
+	/****** global mobile nav elements ******/
+	ul.navbar-text.globalmobile {
+		list-style: none;
+		margin-top: 1em;
+		margin-right: 0em;
+		padding: 0px;
+	}
+
+		ul.navbar-text.globalmobile li {
+			font-size: .9em;
+			float: left;
+		}
+
+			ul.navbar-text.globalmobile li a {
+				color: #222;
+				padding-top: 5px;
+				padding-bottom: 1em;
+				padding-right: 11px;
+				padding-left: 5px;
+				text-align: center;
+			}
+
+			ul.navbar-text.globalmobile li.login a {
+				color: #cc0000;
+				font-size: .9em;
+			}
+
+			ul.navbar-text.globalmobile li.login ul.dropdown-menu {
+				position: absolute;
+				left: 0em;
+			}
+
+				ul.navbar-text.globalmobile li.login ul.dropdown-menu li a {
+					font-size: .95em;
+					padding: 1em;
+					display: block;
+					text-align: center;
+				}
+	/****** new global mobile nav elements ******/
+	ul.globalmobile {
+		list-style: none;
+		margin-top: 0em;
+		margin-right: 0em;
+		padding: 0px;
+	}
+
+		ul.globalmobile li {
+			font-size: 1em;
+			float: left;
+			margin: .5em 0em .5em 0em;
+		}
+
+			ul.globalmobile li a {
+				color: #222;
+				padding-right: .5em;
+				padding-left: .5em;
+				text-align: center;
+			}
+
+	.search {
+		float: none !important;
+		margin: 1em;
+	}
+	/* Start new Quick Links Mobile Menu*/
+	.navbar-collapse.quicklinks {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	ul.quicklinks {
+		float: left;
+		border-top: 1px solid #fff;
+		padding: 0;
+		list-style-type: none;
+		background-color: #C00;
+		margin: 0 1em 1em 0em;
+		width: 100%;
+	}
+
+		ul.quicklinks li {
+			color: #FFF;
+			padding: .25em;
+		}
+
+		ul.quicklinks ul {
+			float: left;
+			width: 50%;
+			list-style-type: none;
+			margin: 0em;
+			padding: 0em;
+		}
+
+	.quicklinks li a {
+		color: #FFF;
+		display: block;
+		text-align: left;
+		padding: .5em .5em;
+		margin: 0;
+		border: 1px solid #fff;
+		font-size: .85em
+	}
+	/* End quicklinks mobile menu */
+	/* Start new Info-For Mobile Menu*/
+	.navbar-collapse.info-for {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	ul.info-for {
+		float: left;
+		border-top: 1px solid #fff;
+		padding: 0;
+		list-style-type: none;
+		background-color: #cdcdcd;
+		margin: 0 1em 1em 0em;
+		width: 100%;
+	}
+
+		ul.info-for li {
+			color: #333;
+			padding: .25em;
+		}
+
+		ul.info-for ul {
+			float: left;
+			width: 50%;
+			list-style-type: none;
+			margin: 0em;
+			padding: 0em;
+		}
+
+	.info-for li a {
+		color: #333;
+		display: block;
+		text-align: left;
+		padding: .5em .5em;
+		margin: 0;
+		border: 1px solid #999;
+		font-size: .85em;
+	}
+	/* End Info-For mobile menu */
+	.breadcrumb, #breadcrumb {
+		display: none;
+	}
+
+	.navbar {
+		min-height: 0px;
+		border: 0px;
+	}
+
+	.navbar-nav .open .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0px;
+		color: #333;
+		background-color: #ffffff;
+		opacity: .95;
+		border: 0px none;
+		box-shadow: none;
+		padding-left: 2em;
+	}
+
+	ul.nav.navbar-nav.main li ul.megamenu-list li {
+		line-height: 3em;
+	}
+
+	ul.nav.navbar-nav.main li ul.megamenu-list {
+		list-style: none outside none;
+		padding: 0em 0em 1em;
+		border: 0px solid;
+		font-size: .9em;
+	}
+	/****** Main Navigation ******/
+	.navbar-inverse .navbar-nav > li > a {
+		color: #FFF;
+		font-size: 16px;
+		padding-right: 16px;
+		padding-left: 16px;
+		font-family: 'Sanchez',serif;
+		font-weight: 700;
+	}
+
+	li.donate a.donate {
+		color: #FFF;
+		background-color: #000;
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+	/****** main-carousel ******/
+	#main-carousel {
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+
+	.carousel-caption {
+		left: 2%;
+		bottom: 20%;
+		padding: 0 .5em;
+		background-color: #222;
+		opacity: .8;
+		text-align: left;
+	}
+
+		.carousel-caption h2 {
+			font-size: 1em;
+			font-family: 'Sanchez',serif;
+			font-weight: 400;
+			margin-top: .5em;
+		}
+
+			.carousel-caption h2 a {
+				color: #ffffff
+			}
+
+		.carousel-caption p {
+			display: none;
+		}
+
+	.carousel-indicators {
+		position: absolute;
+		z-index: 15;
+		width: auto;
+		padding-left: 0px;
+		padding-right: 10px;
+		margin-left: 0px;
+		list-style: outside none none;
+		left: 0;
+		text-align: right;
+		bottom: -3px;
+		right: 0;
+	}
+
+		.carousel-indicators li {
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			margin: 1px 12px 1px 1px;
+			text-indent: -999px;
+			cursor: pointer;
+			background-color: #cc0000;
+			border: 1px solid #FFF;
+			border-radius: 0px
+		}
+
+		.carousel-indicators .active {
+			width: 14px;
+			height: 14px;
+			margin: 1px 12px 1px 1px;
+			background-color: #FFF;
+			border: 1px solid #ccc;
+		}
+
+	.home-features {
+		position: relative;
+		top: 0px;
+		left: 0px;
+		background-color: #fff;
+		padding-bottom: 1em;
+	}
+	/****** newsroom feature element-home page only ******/
+	.newsroom-feature {
+		top: 0;
+	}
+
+	.carousel-caption .newsroom-feature p {
+		display: block;
+		font-size: .8em;
+		margin-bottom: 0px;
+	}
+	/**** News Styles ****/
+	#news-carousel .carousel-indicators {
+		position: absolute;
+		top: 70%;
+		left: 73%;
+		z-index: 15;
+		width: 30%;
+		padding-left: 0px;
+		margin-left: 0px;
+		text-align: center;
+		list-style: outside none none;
+	}
+	/*** Calendar Styles ***/
+	.admissions-event {
+		padding: 0px;
+		margin-bottom: 12px;
+		height: 106px;
+		position: relative;
+	}
+
+		.admissions-event img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			min-height: 100%;
+			z-index: 8;
+		}
+
+		.admissions-event h4 {
+			color: #fff;
+			text-shadow: 1px 1px 2px #000;
+			font-weight: bold;
+			font-size: 1.2em;
+			position: relative;
+			top: 6px;
+			left: 0px;
+			z-index: 10;
+			padding: 0 3px;
+		}
+
+			.admissions-event h4 a {
+				color: #fff;
+				font-weight: bold;
+			}
+
+		.admissions-event p {
+			font-size: 1em;
+			color: #fff;
+			text-shadow: 1px 1px 2px #000;
+			position: relative;
+			top: 3px;
+			left: 0px;
+			z-index: 10;
+			padding: 0 3px;
+			line-height: 1.65em;
+		}
+
+			.admissions-event p a {
+				color: #fff;
+			}
+
+	/** Remove old Localist Calendar Styles**/
+
+	/**
+	 ul#lwe {
+		 padding-left:0;
+	}
+	 #lw li.lwe a {
+		 color: #C00;
+		 font-size: .85em;
+	}
+	 .lwn span.lwn0 {
+		 font-weight: normal;
+		 float: left;
+		 font-size: 12px;
+		 color: #444;
+		 max-width:4em;
+		 margin-right: 1em;
+		 margin-bottom: .5em;
+	}
+	 .lwn {
+		 font-weight: bold;
+		 color: #222;
+		 font-size: 14px;
+		 line-height: 16px;
+		 overflow: hidden;
+	}
+	 .lwl {
+		 font-weight: bold;
+		 padding-top:0px;
+		 color: #222;
+		 font-size: 12px;
+		 line-height: 14px;
+		 overflow: hidden;
+		 clear: both;
+		 margin-left:5em;
+		 display:none;
+	}
+	
+	**/
+
+	/** End Localist Styles **/
+
+	footer.home {
+		background-color: #222;
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+
+	footer {
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+
+		footer ul.about-list {
+			list-style-type: none;
+			border-left: 0px solid #fff;
+			line-height: 1em;
+			padding-left: .5em;
+			font-size: 1.2em;
+			text-align: center;
+			margin-bottom: 2em;
+		}
+
+			footer ul.about-list li a {
+				border: 1px solid #ddd;
+				margin: 1em 0;
+				padding: .5em;
+				display: block;
+			}
+
+				footer ul.about-list li a:hover, footer ul.about-list li a:focus {
+					text-decoration: none;
+					background-color: #ededed;
+					color: #333;
+				}
+
+		footer .athletics {
+			position: relative;
+			top: 0px;
+			margin-bottom: 2em;
+		}
+
+		footer .social {
+			position: relative;
+			top: 0px;
+			margin-bottom: 2em;
+		}
+
+		footer .niu-home {
+			position: relative;
+			top: -32px;
+		}
+}
+
+@media(min-width:768px) {
+	/* Tablet Portrait View*/
+	/*** Branding ***/
+	header h1 {
+		color: #000;
+		font-size: 1.2em;
+		font-family: 'LucidaBri-Dem', serif;
+		font-weight: normal;
+		font-weight: 400;
+		margin-top: 0em;
+		margin-left: 0em;
+		margin-bottom: 0em;
+		padding-top: 0em;
+		line-height: 1.1em;
+	}
+
+		header h1 img {
+			float: left;
+			margin-top: -2px;
+			margin-bottom: .5em;
+			margin-right: .5em;
+			max-width: 45px !important;
+		}
+
+			header h1 img[src*="niu-logo-main.svg"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 350px !important;
+			}
+
+			header h1 img[src*="NI_R_P20_Network_logo.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 300px !important;
+			}
+
+			header h1 img[src*="credit-union-logo.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 300px !important;
+			}
+
+			header h1 img[src*="financial-literacy-logo-sml.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 236px !important;
+			}
+
+		header h1 span.niu-text {
+			color: #000;
+			font-size: 0.5em;
+			font-family: 'LucidaBri-Dem', serif;
+			font-weight: normal;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-left: 0em;
+		}
+
+	span.tagline {
+		color: #C00;
+		font-size: .63em;
+		font-family: 'LucidaBri-DemIta', serif;
+		font-weight: 500;
+		font-weight: normal;
+	}
+	/*** Global Links ***/
+	ul.navbar-nav.global {
+		font-size: .85em;
+	}
+
+		ul.navbar-nav.global a {
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-right: 5px;
+			padding-left: 5px;
+		}
+	/*** Audience Ribbon ***/
+	.audience-ribbon h4 {
+		float: left;
+		padding: 3px 0.5em;
+		font-size: 1em;
+		font-weight: 700;
+		font-style: italic;
+	}
+
+	.audience-ribbon ul.nav.nav-pills li a {
+		padding: 13px 6px 9px;
+		color: #000;
+		font-size: 1em;
+	}
+
+	.audience-ribbon-main ul.nav.nav-pills li a:last-child {
+		padding: 11px .5em 9px;
+		color: #000;
+	}
+
+	.audience-ribbon-main ul.nav.nav-pills li.apply a.apply {
+		color: #fff;
+		background-color: #cc0000;
+		padding-right: 1em;
+		padding-left: 1em;
+		border-radius: 0px;
+	}
+	/*** Main Navigation ***/
+	.navbar-inverse .navbar-nav > li > a {
+		color: #FFF;
+		font-size: 12px;
+		padding-right: 15px;
+		padding-left: 15px;
+		font-family: 'Sanchez',serif;
+		font-weight: 500;
+	}
+
+	#academics .dropdown-menu.mega {
+		width: 40em;
+	}
+
+	#admissions .dropdown-menu.mega {
+		width: 20em;
+	}
+
+	#tuition .dropdown-menu.mega {
+		width: 30em;
+		left: 0em;
+	}
+
+	#lifeatniu .dropdown-menu.mega {
+		/*width: 34em;
+		 left: -13em;
+		*/
+		width: 32em;
+		left: -22.9em;
+	}
+
+	#research .dropdown-menu.mega {
+		/*width:20em;
+		 left:-11.75em*/
+		width: 13em;
+		left: 0em;
+	}
+
+	.home-features h3 {
+		background-color: #222;
+		color: #fff;
+		display: block;
+		padding: .5em .5em;
+		font-size: 1em;
+	}
+
+		.home-features h3 small a {
+			text-align: right;
+			color: #fff;
+			float: right;
+			font-size: .9em;
+			padding-top: 5px;
+		}
+	/*** Main Carousel Styles ***/
+	.carousel-indicators {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		z-index: 15;
+		width: auto;
+		padding-left: 0px;
+		text-align: right;
+		list-style: outside none none;
+		margin-left: 0px;
+		right: 5%;
+	}
+
+		.carousel-indicators li {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			margin: 1px 10px 1px 1px;
+			text-indent: -999px;
+			cursor: pointer;
+			background-color: #cc0000;
+			border: 1px solid #FFF;
+			border-radius: 0px;
+		}
+
+		.carousel-indicators .active {
+			width: 18px;
+			height: 18px;
+			margin: 1px 10px 1px 1px;
+			background-color: #FFF;
+			border: 1px solid #ccc;
+		}
+	/*** News Styles ***/
+	#news-carousel .carousel-indicators {
+		position: absolute;
+		top: 45%;
+		left: 85%;
+		z-index: 15;
+		width: 60%;
+		padding-left: 0px;
+		margin-left: -30%;
+		text-align: center;
+		list-style: none outside none;
+	}
+
+	#news-carousel .carousel-caption h4 a {
+		color: #222;
+		font-size: .8em;
+	}
+
+	#news-carousel .carousel-caption p {
+		color: #222;
+		font-size: .9em;
+	}
+	/*** Calendar Styles ***/
+	.admissions-event {
+		padding: 0px;
+		margin-bottom: 12px;
+		height: 106px;
+		position: relative;
+	}
+
+		.admissions-event img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			min-height: 100%;
+			z-index: 1;
+		}
+
+		.admissions-event h4 {
+			color: #fff;
+			text-shadow: 1px 1px 2px #000;
+			font-weight: bold;
+			font-size: .85em;
+			position: relative;
+			top: 6px;
+			left: 0px;
+			z-index: 10;
+			padding: 0px 3px;
+		}
+
+			.admissions-event h4 a {
+				color: #fff;
+				font-weight: bold;
+			}
+
+		.admissions-event p {
+			font-size: .9em;
+			color: #fff;
+			text-shadow: 1px 1px 2px #000;
+			position: relative;
+			top: 3px;
+			left: 0px;
+			z-index: 10;
+			padding: 0px 3px;
+			line-height: 1.5em;
+		}
+
+			.admissions-event p a {
+				color: #fff;
+			}
+
+	/** Remove old Localist Calendar Styles **/
+
+	/**
+	 ul#lwe {
+		 padding-left:0;
+	}
+	 #lw li.lwe a {
+		 color: #C00;
+		 font-size: .85em;
+	}
+	 .lwn span.lwn0 {
+		 font-weight: normal;
+		 float: left;
+		 font-size: 12px;
+		 color: #444;
+		 max-width:4em;
+		 margin-right: 1em;
+		 margin-bottom: .5em;
+	}
+	 .lwn {
+		 font-weight: bold;
+		 color: #222;
+		 font-size: 14px;
+		 line-height: 16px;
+		 overflow: hidden;
+	}
+	 .lwl {
+		 font-weight: bold;
+		 padding-top:0px;
+		 color: #222;
+		 font-size: 12px;
+		 line-height: 14px;
+		 overflow: hidden;
+		 clear: both;
+		 margin-left:5em;
+		 display:none;
+	}
+	
+ **/
+
+	/** End Localist Calendar Styles **/
+
+
+	footer ul.about-list li a:hover, footer ul.about-list li a:focus {
+		text-decoration: underline;
+	}
+	/*Ruperto's suggested fix for distibuting main nav links across the width of the screen*/
+	.nav.navbar-nav.main {
+		display: table;
+		width: 100%;
+		margin: 0;
+	}
+
+		.nav.navbar-nav.main > li {
+			display: table-cell;
+			text-align: center;
+			float: none;
+		}
+}
+
+@media(min-width:992px) {
+	/* Laptop/projector View*/
+	/*** Branding ***/
+	header h1 {
+		color: #000;
+		font-size: 1.45em;
+		font-family: 'LucidaBri-Dem', serif;
+		font-weight: normal;
+		line-height: 1.1em;
+	}
+
+		header h1 img {
+			float: left;
+			margin-top: -4px;
+			margin-bottom: .5em;
+			margin-right: .5em;
+			max-width: 45px !important;
+		}
+
+			header h1 img[src*="niu-logo-main.svg"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 350px !important;
+			}
+
+			header h1 img[src*="NI_R_P20_Network_logo.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 350px !important;
+			}
+
+			header h1 img[src*="credit-union-logo.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 345px !important;
+			}
+
+			header h1 img[src*="financial-literacy-logo.png"] {
+				float: left;
+				margin-top: -4px;
+				margin-bottom: .5em;
+				margin-right: .5em;
+				max-width: 331px !important;
+			}
+
+		header h1 span.niu-text {
+			color: #000;
+			font-size: 0.5em;
+			font-family: 'LucidaBri-Dem', serif;
+			font-weight: normal;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-left: 0em;
+		}
+
+	span.tagline {
+		color: #C00;
+		font-size: .65em;
+		font-family: 'LucidaBri-DemIta', serif;
+		font-weight: normal;
+		font-weight: 500;
+	}
+	/*** Global Links ***/
+	ul.navbar-nav.global {
+		font-size: 1em;
+		/*changed on may 25 in lieu of new global nav set up*/
+	}
+
+		ul.navbar-nav.global a {
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-right: 5px;
+			padding-left: 2px;
+		}
+	/*** Audience Links ***/
+	.audience-ribbon-main ul.nav.nav-pills li a:last-child {
+		padding: 11px 1em 9px;
+		color: #000;
+	}
+
+	.audience-ribbon-main ul.nav.nav-pills li.apply a.apply {
+		color: #fff;
+		background-color: #cc0000;
+		padding-right: 10px;
+		padding-left: 10px;
+		border-radius: 0px;
+	}
+	/*** Main Navigation ***/
+	.navbar-inverse .navbar-nav > li > a {
+		color: #FFF;
+		font-size: 14px;
+		padding-right: 25px;
+		padding-left: 25px;
+		font-family: 'Sanchez',serif;
+		font-weight: 700;
+	}
+
+	#admissions .dropdown-menu.mega {
+		width: 18em;
+	}
+
+	#tuition .dropdown-menu.mega {
+		width: 39em;
+		left: 0em;
+	}
+
+	#lifeatniu .dropdown-menu.mega {
+		/*width:33em;
+		 left:-6em;
+		*/
+		width: 32em;
+		left: -20.2em;
+	}
+
+	#research .dropdown-menu.mega {
+		/*width:20em;
+		 left:-9.5em;
+		*/
+		width: 17em;
+		left: 0em;
+	}
+
+	.home-features h3 {
+		background-color: #222;
+		color: #fff;
+		display: block;
+		padding: .5em .5em;
+		font-size: 1.25em;
+	}
+
+		.home-features h3 small a {
+			text-align: right;
+			color: #fff;
+			float: right;
+			font-size: .8em;
+			padding-top: 5px;
+		}
+	/*** Main Carousel Styles ***/
+	.carousel-indicators {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		z-index: 15;
+		width: auto;
+		padding-left: 0px;
+		margin-left: 0%;
+		text-align: right;
+		list-style: none outside none;
+		right: 3%;
+	}
+
+		.carousel-indicators li {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			margin: 1px 12px 1px 1px;
+			text-indent: -999px;
+			cursor: pointer;
+			background-color: #cc0000;
+			border: 1px solid #FFF;
+			border-radius: 0px;
+		}
+
+		.carousel-indicators .active {
+			width: 18px;
+			height: 18px;
+			margin: 1px 12px 1px 1px;
+			background-color: #FFF;
+			border: 1px solid #ccc;
+		}
+	/*** News Styles ***/
+	#news-carousel .carousel-indicators {
+		position: absolute;
+		top: 60%;
+		left: 90%;
+		z-index: 15;
+		width: 60%;
+		padding-left: 0px;
+		margin-left: -30%;
+		text-align: center;
+		list-style: none outside none;
+	}
+
+	#news-carousel .carousel-caption h4 a {
+		color: #222;
+		font-size: 16px;
+	}
+
+	#news-carousel .carousel-caption p {
+		color: #222;
+		font-size: 1em;
+	}
+	/*** Calendar Styles ***/
+	.admissions-event {
+		padding: 0px;
+		margin-bottom: 12px;
+		height: 106px;
+		position: relative;
+	}
+
+		.admissions-event img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 8;
+		}
+
+		.admissions-event h4 {
+			color: #fff;
+			text-shadow: 1px 1px 2px #000;
+			font-weight: bold;
+			font-size: 1.24em;
+			position: relative;
+			top: 6px;
+			left: 0px;
+			z-index: 10;
+			padding: 0px 6px;
+		}
+
+			.admissions-event h4 a {
+				color: #fff;
+				font-weight: bold;
+			}
+
+		.admissions-event p {
+			font-size: 1.1em;
+			color: #fff;
+			text-shadow: 1px 1px 2px #000;
+			position: relative;
+			top: 3px;
+			left: 0px;
+			z-index: 10;
+			padding: 0px 6px;
+			line-height: 1.5em;
+		}
+
+			.admissions-event p a {
+				color: #fff;
+			}
+
+	/** Remove old Localist Calendar Styles **/
+	/*
+	 ul#lwe {
+		 padding-left:0;
+	}
+	 #lw li.lwe a{
+		 color:#cc0000;
+		 font-size: .85em;
+	}
+	 .lwn {
+		 font-weight: bold;
+		 color: #222;
+		 font-size: 16px;
+		 line-height: 19px;
+		 overflow: hidden;
+	}
+	 .lwn span.lwn0 {
+		 font-weight: normal;
+		 float: left;
+		 font-size: 14px;
+		 color: #444;
+		 max-width:4em;
+		 margin-right: 1em;
+		 margin-bottom: .5em;
+	}
+	 .lwl {
+		 font-weight: bold;
+		 padding-top:0px;
+		 color: #222;
+		 font-size: 12px;
+		 line-height: 14px;
+		 overflow: hidden;
+		 clear: both;
+		 margin-left:5em;
+	}
+	
+	*/
+	/** End localist calendar styles **/
+}
+
+@media(min-width:1200px) {
+	/* Large Desktop View*/
+	/*** Branding ***/
+	header h1 {
+		color: #000;
+		font-size: 1.5em;
+		font-family: 'LucidaBri-Dem', serif;
+		font-weight: normal;
+		font-weight: 400;
+		line-height: 1.15em;
+	}
+
+		header h1 img {
+			float: left;
+			margin-top: -4px;
+			margin-bottom: .5em;
+			margin-right: .5em;
+			max-width: 45px !important;
+		}
+
+		header h1 span.niu-text {
+			color: #000;
+			font-size: 0.5em;
+			font-family: 'LucidaBri-Dem', serif;
+			font-weight: normal;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-left: 0em;
+		}
+
+		header h1 img[src*="niu-logo-main.svg"] {
+			float: left;
+			margin-top: -4px;
+			margin-bottom: .5em;
+			margin-right: .5em;
+			max-width: 350px !important;
+		}
+
+		header h1 img[src*="NI_R_P20_Network_logo.png"] {
+			float: left;
+			margin-top: -4px;
+			margin-bottom: .5em;
+			margin-right: .5em;
+			max-width: 350px !important;
+		}
+
+		header h1 img[src*="credit-union-logo.png"] {
+			float: left;
+			margin-top: -4px;
+			margin-bottom: .5em;
+			margin-right: .5em;
+			max-width: 345px !important;
+		}
+
+		header h1 img[src*="financial-literacy-logo.png"] {
+			float: left;
+			margin-top: -4px;
+			margin-bottom: .5em;
+			margin-right: .5em;
+			max-width: 331px !important;
+		}
+
+	span.tagline {
+		font-size: .65em;
+		font-family: 'LucidaBri-DemIta', serif;
+		font-weight: 300;
+		font-weight: normal;
+		color: #cc0000;
+	}
+	/*** Global Links ***/
+	ul.navbar-nav.global a {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	/*** Main Navigation ***/
+	.navbar-inverse .navbar-nav > li > a {
+		color: #FFF;
+		font-size: 16px;
+		padding-right: 32px;
+		padding-left: 32px;
+		font-family: 'Sanchez',serif;
+		font-weight: 700;
+	}
+
+	#lifeatniu .dropdown-menu.mega {
+		/*width:32.35em;
+		 left:0em;
+		*/
+		width: 32em;
+		left: -17.8em;
+	}
+
+	#research .dropdown-menu.mega {
+		/*width:18em;
+		 left:-5.38em;
+		*/
+		width: 21em;
+		left: 0em;
+	}
+
+	.home-features h3 {
+		background-color: #222;
+		color: #fff;
+		display: block;
+		padding: .5em .5em;
+		font-size: 1.35em;
+	}
+
+		.home-features h3 small a {
+			text-align: right;
+			color: #fff;
+			float: right;
+			font-size: .9em;
+			padding-top: 5px;
+		}
+	/*** Main Carousel Styles ***/
+	.carousel-indicators {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		z-index: 15;
+		width: auto;
+		padding-left: 0px;
+		margin-left: 0%;
+		text-align: right;
+		list-style: none outside none;
+		right: 3%;
+	}
+
+		.carousel-indicators li {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			margin: 1px 12px 1px 1px;
+			text-indent: -999px;
+			cursor: pointer;
+			background-color: #cc0000;
+			border: 1px solid #FFF;
+			border-radius: 0px;
+		}
+
+		.carousel-indicators .active {
+			width: 18px;
+			height: 18px;
+			margin: 1px 12px 1px 1px;
+			background-color: #FFF;
+			border: 1px solid #ccc;
+		}
+	/*** News Styles ***/
+	#news-carousel .carousel-indicators {
+		position: absolute;
+		top: 60%;
+		left: 90%;
+		z-index: 15;
+		width: 60%;
+		padding-left: 0px;
+		margin-left: -30%;
+		text-align: center;
+		list-style: none outside none;
+	}
+
+	#news-carousel .carousel-caption h4 a {
+		color: #222;
+		font-size: 18px;
+	}
+
+	#news-carousel .carousel-caption p {
+		color: #222;
+		font-size: 1em;
+	}
+	/*** Calendar Styles ***/
+	.admissions-event {
+		padding: 0px;
+		margin-bottom: 12px;
+		position: relative;
+		min-height: 112px;
+	}
+
+		.admissions-event img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 8;
+		}
+
+			.admissions-event img a {
+				display: block;
+			}
+
+		.admissions-event h4 {
+			color: #fff;
+			text-shadow: 1px 1px 2px #000;
+			font-weight: bold;
+			font-size: 1.5em;
+			position: relative;
+			top: 6px;
+			left: 0px;
+			z-index: 10;
+			padding: 0px 6px;
+		}
+
+			.admissions-event h4 a {
+				color: #fff;
+				font-weight: bold;
+			}
+
+		.admissions-event p {
+			font-size: 1.10em;
+			color: #fff;
+			text-shadow: 1px 1px 2px #000;
+			position: relative;
+			top: 3px;
+			left: 0px;
+			z-index: 10;
+			padding: 0px 6px;
+			line-height: 1.5em;
+		}
+
+			.admissions-event p a {
+				color: #fff;
+			}
+
+	/** Remove old Localist Calendar styles **/
+	/**
+	 ul#lwe {
+		 padding-left:0;
+	}
+	 #lw li.lwe a{
+		 color:#cc0000;
+		 font-size: 1em;
+	}
+	 .lwn {
+		 font-weight: bold;
+		 color: #222;
+		 font-size: 16px;
+		 line-height: 19px;
+		 overflow: hidden;
+	}
+	 .lwn span.lwn0 {
+		 font-weight: normal;
+		 float: left;
+		 font-size: 14px;
+		 color: #444;
+		 max-width:4em;
+		 margin-right: 1em;
+		 margin-bottom: .5em;
+	}
+	 .lwl {
+		 font-weight: bold;
+		 padding-top:0px;
+		 color: #222;
+		 font-size: 12px;
+		 line-height: 14px;
+		 overflow: hidden;
+		 clear: both;
+		 margin-left:5em;
+	}
+	*/
+	/** end Localist Calendar Styles **/
+}
+/*override NIU�s padding � we�re also decreasing Bootstrap default padding from 15 to 14*/
+.nav.navbar-nav.main > li > a {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+/*** custom table styles ***/
+table.table-no-border {
+	border: 0px solid #ddd;
+}
+
+.table-no-border > thead > tr > th, .table-no-border > tbody > tr > th, .table-no-border > tfoot > tr > th, .table-no-border > thead > tr > td, .table-no-border > tbody > tr > td, .table-no-border > tfoot > tr > td {
+	border: 0px solid #ddd;
+}
+/* Source: http://www.bootply.com/AVpnpgFE76 Used in homepage features (environmental-studies) */
+.timeline {
+	list-style: none;
+	padding: 20px 0 20px;
+	position: relative;
+}
+
+	.timeline:before {
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		content: " ";
+		width: 3px;
+		background-color: #eeeeee;
+		left: 40px;
+		margin-left: -1.5px;
+	}
+
+	.timeline > li {
+		margin-bottom: 20px;
+		position: relative;
+	}
+
+		.timeline > li:before, .timeline > li:after {
+			content: " ";
+			display: table;
+		}
+
+		.timeline > li:after {
+			clear: both;
+		}
+
+		.timeline > li:before, .timeline > li:after {
+			content: " ";
+			display: table;
+		}
+
+		.timeline > li:after {
+			clear: both;
+		}
+
+		.timeline > li > .timeline-panel {
+			display: block;
+			border: 1px solid #d4d4d4;
+			border-radius: 2px;
+			padding: 20px;
+			position: relative;
+			margin-left: 90px;
+			-webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+			box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+		}
+
+			.timeline > li > .timeline-panel:before {
+				position: absolute;
+				top: 26px;
+				left: -15px;
+				display: inline-block;
+				border-top: 15px solid transparent;
+				border-left: 0 solid #ccc;
+				border-right: 15px solid #ccc;
+				border-bottom: 15px solid transparent;
+				content: " ";
+			}
+
+			.timeline > li > .timeline-panel:after {
+				position: absolute;
+				top: 27px;
+				left: -14px;
+				display: inline-block;
+				border-top: 14px solid transparent;
+				border-left: 0 solid #fff;
+				border-right: 14px solid #fff;
+				border-bottom: 14px solid transparent;
+				content: " ";
+			}
+
+		.timeline > li > .timeline-badge {
+			color: #fff;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 1.4em;
+			text-align: center;
+			position: absolute;
+			top: 16px;
+			left: 40px;
+			margin-left: -25px;
+			background-color: #bbb;
+			z-index: 100;
+			border-top-right-radius: 50%;
+			border-top-left-radius: 50%;
+			border-bottom-right-radius: 50%;
+			border-bottom-left-radius: 50%;
+		}
+
+@media (max-width: 767px) {
+	.timeline:before {
+		left: 20px !important;
+	}
+
+	.timeline > li > .timeline-panel {
+		margin-left: 48px;
+		padding: 12px 20px;
+	}
+
+	.timeline > li > .timeline-badge {
+		width: 30px;
+		height: 30px;
+		left: 30px;
+		line-height: 30px;
+		font-size: 1em;
+	}
+
+	.timeline > li > .timeline-panel:before, .timeline > li > .timeline-panel:after {
+		top: 23px;
+		left: -8px;
+		border-top-width: 7px;
+		border-right-width: 7px;
+		border-bottom-width: 7px;
+	}
+
+	.timeline > li > .timeline-panel:after {
+		left: -7px;
+	}
+}
+
+/*** Font Awesome Custom CSS updated by Jory Keller May 05, 2017 ***/
+.social .fa {
+	color: #555;
+}
+
+.social {
+	margin: 0;
+	padding: 0;
+}
+
+	.social ul {
+		margin: 0;
+		padding: 5px;
+	}
+
+		.social ul li {
+			margin: 5px;
+			list-style: none outside none;
+			display: inline-block;
+		}
+
+	.social .fa {
+		color: #fff;
+	}
+
+	.social i {
+		width: 30px;
+		height: 30px;
+		color: #fff;
+		font-size: 20px;
+		text-align: center;
+		padding-top: 5px;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+		transition: all ease 0.3s;
+		-moz-transition: all ease 0.3s;
+		-webkit-transition: all ease 0.3s;
+		-o-transition: all ease 0.3s;
+		-ms-transition: all ease 0.3s;
+	}
+
+		.social i:hover {
+			color: #555;
+			text-decoration: none;
+			background-color: #e4e4e4;
+			transition: all ease 0.3s;
+			-moz-transition: all ease 0.3s;
+			-webkit-transition: all ease 0.3s;
+			-o-transition: all ease 0.3s;
+			-ms-transition: all ease 0.3s;
+		}
+
+	.social .fa-facebook {
+		background: #4060A5;
+	}
+
+	.social .fa-facebook-square {
+		background: #4060A5;
+	}
+
+	.social .fa-twitter {
+		background: #00ABE3;
+	}
+
+	.social .fa-google-plus {
+		background: #e64522;
+	}
+
+	.social .fa-github {
+		background: #343434;
+	}
+
+	.social .fa-pinterest {
+		background: #cb2027;
+	}
+
+	.social .fa-linkedin {
+		background: #0094BC;
+	}
+
+	.social .fa-flickr {
+		background: #FF57AE;
+	}
+
+	.social .fa-instagram {
+		background: #ea27e3;
+	}
+
+	.social .fa-vimeo {
+		background: #00adef;
+	}
+
+	.social .fa-vimeo-square {
+		background: #83DAEB;
+	}
+
+	.social .fa-stack-overflow {
+		background: #FEA501;
+	}
+
+	.social .fa-dropbox {
+		background: #017FE5;
+	}
+
+	.social .fa-tumblr {
+		background: #3a5876;
+	}
+
+	.social .fa-dribbble {
+		background: #F46899;
+	}
+
+	.social .fa-skype {
+		background: #00C6FF;
+	}
+
+	.social .fa-stack-exchange {
+		background: #4D86C9;
+	}
+
+	.social .fa-youtube {
+		background: #FF1F25;
+	}
+
+	.social .fa-xing {
+		background: #005C5E;
+	}
+
+	.social .fa-blogger:hover {
+		background-image: url('https://niu.edu/images/social_media_icons/blogger-icon-before-small.svg');
+	}
+
+	.social .fa-blogger {
+		background: #f78f32;
+		background-image: url('https://niu.edu/images/social_media_icons/blogger-icon-after-small.svg');
+	}
+
+.fa-blogger:before {
+	content: "\f19a";
+	text-indent: -9999px;
+	display: block;
+}
+
+.social .fa-rss {
+	background: #e88845;
+}
+
+.social .fa-foursquare {
+	background: #09B9E0;
+}
+
+.social .fa-youtube-play {
+	background: #DF192A;
+}
+
+.social .fa-wordpress {
+	background: #59b7de;
+}
+
+.social .fa-snapchat-ghost {
+	background: #fffc00;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

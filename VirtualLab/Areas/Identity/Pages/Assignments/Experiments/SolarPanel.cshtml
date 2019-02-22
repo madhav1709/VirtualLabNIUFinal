@@ -1,9 +1,8 @@
 ﻿@page
 @model SolarPanelModel
 @{
+	ViewData["Title"] = "Solar Panel Experiment";
 }
-
-
 
 @section scripts {
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -21,9 +20,9 @@
 			<span class="solarPanel-circuit js-circuit"></span>
 
 			<span class="solarPanel-circuit-connection a js-circuit-connection" id="zva"></span>
-			<span class="solarPanel-circuit-connection b js-circuit-connection" id="yhb"></span>
+			<span class="solarPanel-circuit-connection b js-circuit-connection" id="yvb"></span>
 			<span class="solarPanel-circuit-connection c js-circuit-connection" id="xvc"></span>
-			<span class="solarPanel-circuit-connection d js-circuit-connection" id="whd"></span>
+			<span class="solarPanel-circuit-connection d js-circuit-connection" id="wvd"></span>
 		</div>
 	</div>
 
@@ -37,7 +36,7 @@
 		<div class="drag-container">
 			<div id="di22" class="drag-item">
 				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="bhw" class="img-svg" />
+				<img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="bvw" class="img-svg" />
 			</div>
 		</div>
 
@@ -51,7 +50,7 @@
 		<div class="drag-container">
 			<div id="di22" class="drag-item">
 				<p>Voltmeter</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/voltmeter.png" id="dhy" class="img-svg" />
+				<img src="~/images/practicalExperiments/solarCellsSeries/voltmeter.png" id="dvy" class="img-svg" />
 			</div>
 		</div>
 	</div>
@@ -62,39 +61,15 @@
 	<div class="col-md-4">
 		<form>
 			<div class="form-group">
-				<label for="resistanceSolarCellParallel">Resistance (Ω)</label>
-				<input type="number" min="0" step="0.0001" class="form-control" id="resistanceBuck" name="resistanceBuck"
-					   placeholder="Resistance (Ω)" required>
+				<label for="irridianceSolarPanel">Irradiation (Wb/m)</label>
+				<input type="number" min="0" step="0.0001" class="form-control" id="irridianceSolarPanel" name="irridianceSolarPanel"
+					   placeholder="Irridiance (Wb/m)" required>
 			</div>
 
 			<div class="form-group">
-				<label for="inductanceBuck">Inductance (μH)</label>
-				<input type="number" min="0" step="0.0000000001" class="form-control" id="inductanceBuck" name="inductanceBuck"
-					   placeholder="Inductance (μH)" required>
-			</div>
-
-			<div class="form-group">
-				<label for="dutyCycleBuck">Duty Cycle (%)</label>
-				<input type="number" min="0" step="0.0001" class="form-control" id="dutyCycleBuck" name="dutyCycleBuck"
-					   placeholder="Duty Cycle (%)" required>
-			</div>
-
-			<div class="form-group">
-				<label for="capacitanceBuck">Capacitance (μF)</label>
-				<input type="number" min="0.0001" step="0.0000000001" class="form-control" id="capacitanceBuck"
-					   name="capacitanceBuck" placeholder="Capacitance (μF)" required>
-			</div>
-
-			<div class="form-group">
-				<label for="voltageInputBuck">Voltage Input (V)</label>
-				<input type="number" min="0" step="0.0001" class="form-control" id="voltageInputBuck" name="voltageInputBuck"
-					   placeholder="Voltage Input (V)" required>
-			</div>
-
-			<div class="form-group">
-				<label for="frequencyBuck">Frequency (kHz)</label>
-				<input type="number" min="0" step="1" class="form-control" id="frequencyBuck" name="frequencyBuck"
-					   placeholder="Frequency (kHz)" required>
+				<label for="temperatureSolarPanel">Temperature (°C)</label>
+				<input type="number" min="0" step="0.0000000001" class="form-control" id="temperatureSolarPanel" name="temperatureSolarPanel"
+					   placeholder="Temperature (°C)" required>
 			</div>
 
 			<button type="submit" class="btn btn-primary">Submit</button>
