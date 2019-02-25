@@ -80,16 +80,17 @@ function placeComponent(s31, s32) {
 }
 
 function onBtnClick() {
-    if (total == 6) {
+    if (total == 7) {
         ftotal = 0;
         for (i in sa) {
             if (sa[i] == sb[i]) {
                 ftotal++;
             }
         }
-        if (ftotal == 6) {
-            var form = document.getElementById('buckConverter');
-            form.submit();
+        if (ftotal == 7) {
+            alert('Congratulations!');
+            //var form = document.getElementById('buckConverter');
+            //form.submit();
         } else {
             if (!alert('Please check the arrangement and try again!')) {
                 window.location.reload();
