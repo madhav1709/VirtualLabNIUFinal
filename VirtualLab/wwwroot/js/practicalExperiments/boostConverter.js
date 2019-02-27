@@ -35,8 +35,8 @@ function handleComponentDrop(event, ui) {
     sa.push(s21);
     sb.push(s22);
 
-    console.log(s31);
-    console.log(s32);
+    console.log(s21);
+    console.log(s22);
     if (s11 == s12) {
         ui.draggable.addClass('correct');
         ui.draggable.draggable('disable');
@@ -89,8 +89,8 @@ function onBtnClick() {
         }
         if (ftotal == 7) {
             alert('Congratulations!');
-            //var form = document.getElementById('buckConverter');
-            //form.submit();
+            var form = document.getElementById('buckConverter');
+            form.submit();
         } else {
             if (!alert('Please check the arrangement and try again!')) {
                 window.location.reload();

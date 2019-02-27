@@ -35,7 +35,7 @@ namespace VirtualLab
 
 			app.UseMvc();
 
-			CreateRoles(serviceProvider).Wait();
+			//CreateRoles(serviceProvider).Wait();
 
 			app.Run(async (context) =>
 			{

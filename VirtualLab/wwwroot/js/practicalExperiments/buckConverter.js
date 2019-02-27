@@ -89,8 +89,8 @@ function onBtnClick() {
         }
         if (ftotal == 7) {
             alert('Congratulations!');
-            //var form = document.getElementById('buckConverter');
-            //form.submit();
+            var form = document.getElementById('buckConverter');
+            form.submit();
         } else {
             if (!alert('Please check the arrangement and try again!')) {
                 window.location.reload();
