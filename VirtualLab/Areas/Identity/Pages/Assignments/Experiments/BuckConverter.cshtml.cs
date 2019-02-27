@@ -55,7 +55,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
             string JSONresult = JsonConvert.SerializeObject(Input);
             
 
-            const int portNumber = 6802;
+            const int portNumber = 6601;
             const string hostName = "127.0.0.1";
             
             try

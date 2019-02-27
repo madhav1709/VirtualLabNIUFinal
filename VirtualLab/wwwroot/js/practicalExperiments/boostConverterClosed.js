@@ -57,7 +57,7 @@ function onBtnClick() {
         }
         if (ftotal == 4) {
             alert('Congratulations!');
-            var form = document.getElementById('buckConverterClosed');
+            var form = document.getElementById('boostConverterClosed');
             form.submit();
         } else {
             if (!alert('Please check the arrangement and try again!')) {

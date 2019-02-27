@@ -1,5 +1,5 @@
 ﻿@page
-@model BuckConverterClosedModel
+@model BoostConverterClosedModel
 @{
 	ViewData["Title"] = "Boost Converter Closed Experiment";
 }
@@ -7,45 +7,45 @@
 @section scripts {
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="~/js/practicalExperiments/buckConverterClosed.js"></script>
+	<script type="text/javascript" src="~/js/practicalExperiments/boostConverterClosed.js"></script>
 }
 <br>
 
-<link rel="stylesheet" type="text/css" href="~/css/practicalExperiments/buckConverterClosed.css">
-<h2>Experiment - 2 : Buck Converter Closed</h2>
+<link rel="stylesheet" type="text/css" href="~/css/practicalExperiments/boostConverterClosed.css">
+<h2>Experiment - 4 : Boost Converter Closed</h2>
 <div class="row">
 	<div class="col-md-8">
 		<div class="circuit-container js-circuit-container">
-			<span class="buck-circuit js-circuit"></span>
+			<span class="boost-circuit js-circuit"></span>
 
-			<span class="buck-circuit-connection a js-circuit-connection" id="zva"></span>
-			<span class="buck-circuit-connection b js-circuit-connection" id="yvb"></span>
-			<span class="buck-circuit-connection c js-circuit-connection" id="xvc"></span>
-			<span class="buck-circuit-connection d js-circuit-connection" id="wvd"></span>
+			<span class="boost-circuit-connection a js-circuit-connection" id="zva"></span>
+			<span class="boost-circuit-connection b js-circuit-connection" id="yvb"></span>
+			<span class="boost-circuit-connection c js-circuit-connection" id="xvc"></span>
+			<span class="boost-circuit-connection d js-circuit-connection" id="wvd"></span>
 		</div>
 	</div>
 
 	<div class="col-md-4">
 		<div class="drag-container">
 			<div id="di21" class="drag-item">
-				<img src="~/images/practicalExperiments/buckConverterClosed/bc.png" id="avx" class="img-svg" />
+				<img src="~/images/practicalExperiments/boostConverterClosed/bc.png" id="avx" class="img-svg" />
 			</div>
 		</div>
 		<div class="drag-container">
 			<div id="di22" class="drag-item">
-				<img src="~/images/practicalExperiments/buckConverterClosed/dc.png" id="bvy" class="img-svg" />
-			</div>
-		</div>
-
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<img src="~/images/practicalExperiments/buckConverterClosed/fc.png" id="cvz" class="img-svg" />
+				<img src="~/images/practicalExperiments/boostConverterClosed/dc.png" id="bvy" class="img-svg" />
 			</div>
 		</div>
 
 		<div class="drag-container">
 			<div id="di22" class="drag-item">
-				<img src="~/images/practicalExperiments/buckConverterClosed/ssc.png" id="dvw" class="img-svg" />
+				<img src="~/images/practicalExperiments/boostConverterClosed/fc.png" id="cvz" class="img-svg" />
+			</div>
+		</div>
+
+		<div class="drag-container">
+			<div id="di22" class="drag-item">
+				<img src="~/images/practicalExperiments/boostConverterClosed/ssc.png" id="dvw" class="img-svg" />
 			</div>
 		</div>
 	</div>
@@ -53,7 +53,7 @@
 </div>
 <div class="row">
 	<div class="col-md-4">
-		<form id="buckConverterClosed" method="post">
+		<form id="boostConverterClosed" method="post">
 			<div class="form-group">
 				<label asp-for="Input.VO1"></label>
 				<input asp-for="Input.VO1" class="form-control" />
@@ -63,6 +63,6 @@
 		</form>
 	</div>
 	<div class="col-md-6">
-		
+
 	</div>
 </div>

@@ -47,44 +47,20 @@ function handleComponentDrop(event, ui) {
         ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
         ui.draggable.draggable('option', 'revert', false);
         total++;
-        placeComponent(s31, s32);
-    }
-}
-
-function placeComponent(s31, s32) {
-    if (s31 == "a") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "b") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "c") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "d") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "e") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "f") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "g") {
-        var s = s32.charCodeAt(0) + 7;
     }
 }
 
 function onBtnClick() {
-    if (total == 6) {
+    if (total == 10) {
         ftotal = 0;
         for (i in sa) {
             if (sa[i] == sb[i]) {
                 ftotal++;
             }
         }
-        if (ftotal == 6) {
-            var form = document.getElementById('buckConverter');
+        if (ftotal == 10) {
+            alert('Congratulations!');
+            var form = document.getElementById('solarCellSeries');
             form.submit();
         } else {
             if (!alert('Please check the arrangement and try again!')) {

@@ -32,59 +32,32 @@ function handleComponentDrop(event, ui) {
     var s31 = str1.slice(0, 1);
     var s32 = str2.slice(2, 3);
 
-    var s41 = str1.slice(3, 4);
-    var s42 = str2.slice(3, 4);
-
     sa.push(s21);
     sb.push(s22);
 
-    console.log(s41);
-    console.log(s42);
-    if (s11 == s12 && s41 == s42) {
+    console.log(s21);
+    console.log(s22);
+    if (s11 == s12) {
         ui.draggable.addClass('correct');
         ui.draggable.draggable('disable');
         $(this).droppable('disable');
         ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
         ui.draggable.draggable('option', 'revert', false);
         total++;
-        placeComponent(s31, s32);
-    }
-}
-
-function placeComponent(s31, s32) {
-    if (s31 == "a") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "b") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "c") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "d") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "e") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "f") {
-        var s = s32.charCodeAt(0) + 7;
-    }
-    else if (s31 == "g") {
-        var s = s32.charCodeAt(0) + 7;
     }
 }
 
 function onBtnClick() {
-    if (total == 6) {
+    if (total == 4) {
         ftotal = 0;
         for (i in sa) {
             if (sa[i] == sb[i]) {
                 ftotal++;
             }
         }
-        if (ftotal == 6) {
-            var form = document.getElementById('buckConverter');
+        if (ftotal == 4) {
+            alert('Congratulations!');
+            var form = document.getElementById('solarPanel');
             form.submit();
         } else {
             if (!alert('Please check the arrangement and try again!')) {

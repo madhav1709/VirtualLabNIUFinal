@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 {
-    public class SolarCellParallelModel : PageModel
+    public class BoostConverterClosedModel : PageModel
     {
 		[BindProperty]
 		public InputModel Input { get; set; }
@@ -20,34 +20,20 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 		public class InputModel
 		{
 			[Required]
-			[Display(Name = "Irradiation (Wb/m)")]
-			public int Suns { get; set; }
-
-			[Required]
-			[Display(Name = "Temperature (°C)")]
-			public int Te { get; set; }
-
-			[Required]
-			[Display(Name = "Resistance (Ω)")]
-			public int Rl { get; set; }
-
-			public double Va = 0.0001;
-
-			public int Ns = 1;
-
-			public int Np = 3;
+			[Display(Name = "Reference Voltage (V)")]
+			public int VO1 { get; set; }
 		}
 
 		public void OnGet()
-		{
-		}
+        {
+        }
 
 		public void OnPost()
 		{
 			string JSONresult = JsonConvert.SerializeObject(Input);
 
 
-			const int portNumber = 6811;
+			const int portNumber = 6805;
 			const string hostName = "127.0.0.1";
 
 			try

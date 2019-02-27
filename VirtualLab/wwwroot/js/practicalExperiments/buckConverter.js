@@ -44,10 +44,10 @@ function handleComponentDrop(event, ui) {
         ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
         ui.draggable.draggable('option', 'revert', false);
         total++;
-        placeComponent(s31, s32);
+        //placeComponent(s31, s32);
     }
 }
-
+/*
 function placeComponent(s31, s32) {
     if (s31 == "a") {
         var s = s32.charCodeAt(0) + 7;
@@ -78,7 +78,7 @@ function placeComponent(s31, s32) {
         var s = s32.charCodeAt(0) + 7;
     }
 }
-
+*/
 function onBtnClick() {
     if (total == 7) {
         ftotal = 0;
