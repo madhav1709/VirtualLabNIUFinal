@@ -44,10 +44,10 @@ function handleComponentDrop(event, ui) {
         ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
         ui.draggable.draggable('option', 'revert', false);
         total++;
-        //placeComponent(s31, s32);
+        placeComponent(s31, s32);
     }
 }
-/*
+
 function placeComponent(s31, s32) {
     if (s31 == "a") {
         var s = s32.charCodeAt(0) + 7;
@@ -59,12 +59,13 @@ function placeComponent(s31, s32) {
     }
     else if (s31 == "c") {
         var s = s32.charCodeAt(0) + 7;
-        document.getElementById(String.fromCharCode(s)).classList.add('rotateimg90minus');
+        document.getElementById(String.fromCharCode(s)).classList.add('rotateimg90');
         document.getElementById(String.fromCharCode(s)).style.backgroundImage = 'url(https://upload.wikimedia.org/wikipedia/commons/c/cc/Diode01.svg)';
     }
     else if (s31 == "d") {
         var s = s32.charCodeAt(0) + 7;
-        document.getElementById(String.fromCharCode(s)).style.backgroundImage = 'url(/images/experiments/buckConverter/npn_symbol.svg)';
+        document.getElementById(String.fromCharCode(s)).classList.add('rotateimg90');
+        document.getElementById(String.fromCharCode(s)).style.backgroundImage = 'url(/images/practicalExperiments/buckConverter/npn_symbol.svg)';
     }
     else if (s31 == "e") {
         var s = s32.charCodeAt(0) + 7;
@@ -76,9 +77,10 @@ function placeComponent(s31, s32) {
     }
     else if (s31 == "g") {
         var s = s32.charCodeAt(0) + 7;
+        document.getElementById(String.fromCharCode(s)).style.backgroundImage = 'url(/images/practicalExperiments/buckConverter/pwmSVG.svg)';
     }
 }
-*/
+
 function onBtnClick() {
     if (total == 7) {
         ftotal = 0;

@@ -20,23 +20,25 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 		public class InputModel
 		{
 			[Required]
-			[Display(Name = "Irradiation (Wb/m)")]
-			public int Suns { get; set; }
+			[Display(Name = "Irradiation (W/m)")]
+			public double Suns { get; set; }
 
 			[Required]
 			[Display(Name = "Temperature (°C)")]
-			public int Te { get; set; }
+			public double TaC { get; set; }
 
-			public int Rl = 10;
+			public double Ra = 10;
 
 			public double Va = 0.0001;
 
-			public int Ns = 3;
+			public double Ns = 3;
 
-			public int Np = 1;
+			public double Np = 1;
 		}
 
-		public void OnGet()
+        public string finalResult = null;
+
+        public void OnGet()
 		{
 		}
 
@@ -83,7 +85,9 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 					// Print out the received message to the console.
 					Console.WriteLine("You received the following message : " +
 												 myCompleteMessage);
-				}
+
+                    finalResult = myCompleteMessage.ToString();
+                }
 				else
 				{
 					Console.WriteLine("Sorry.  You cannot read from this NetworkStream.");

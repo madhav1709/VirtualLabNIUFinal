@@ -21,30 +21,32 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
         {
             [Required]
             [Display(Name = "Resistance (Ω)")]
-            public int Ru { get; set; }
+            public double Ru { get; set; }
 
             [Required]
             [Display(Name = "Inductance (μH)")]
-            public int Lu { get; set; }
+            public double Lu { get; set; }
 
             [Required]
             [Display(Name = "Duty Cycle (%)")]
-            public int Du { get; set; }
+            public double Du { get; set; }
 
             [Required]
             [Display(Name = "Capacitance (μF)")]
-            public int Cu { get; set; }
+            public double Cu { get; set; }
 
             [Required]
             [Display(Name = "Voltage Input (V)")]
-            public int Vin { get; set; }
+            public double Vin { get; set; }
 
             [Required]
             [Display(Name = "Frequency (kHz)")]
-            public int Fu { get; set; }
+            public double Fu { get; set; }
 
             public int r1 = 0;
         }
+
+        public string finalResult = null;
 
         public void OnGet()
         {
@@ -93,6 +95,8 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 					// Print out the received message to the console.
 					Console.WriteLine("You received the following message : " +
 												 myCompleteMessage);
+
+                    finalResult = myCompleteMessage.ToString();
 				}
 				else
 				{

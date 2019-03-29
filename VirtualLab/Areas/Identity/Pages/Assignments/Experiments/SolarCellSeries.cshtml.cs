@@ -25,11 +25,11 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 
 			[Required]
 			[Display(Name = "Temperature (°C)")]
-			public int Te { get; set; }
+			public int TaC { get; set; }
 
 			[Required]
 			[Display(Name = "Resistance (Ω)")]
-			public int Rl { get; set; }
+			public int Ra { get; set; }
 
 			public double Va = 0.0001;
 
@@ -38,7 +38,9 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 			public int Np = 1;
 		}
 
-		public void OnGet()
+        public string finalResult = null;
+
+        public void OnGet()
 		{
 		}
 
@@ -85,7 +87,9 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 					// Print out the received message to the console.
 					Console.WriteLine("You received the following message : " +
 												 myCompleteMessage);
-				}
+
+                    finalResult = myCompleteMessage.ToString();
+                }
 				else
 				{
 					Console.WriteLine("Sorry.  You cannot read from this NetworkStream.");

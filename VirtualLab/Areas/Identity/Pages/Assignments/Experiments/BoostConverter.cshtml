@@ -1,142 +1,250 @@
 ﻿@page
 @model BoostConverterModel
 @{
-	ViewData["Title"] = "Boost Converter Experiment";
+    ViewData["Title"] = "Boost Converter Experiment";
 }
 
 @section scripts {
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="~/js/practicalExperiments/boostConverter.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/js/practicalExperiments/boostConverter.js"></script>
 }
 <br>
 
 <link rel="stylesheet" type="text/css" href="~/css/practicalExperiments/boostConverter.css">
-<h2>Experiment - 3 : Boost Converter</h2>
-<div class="row">
-	<div class="col-md-8">
-		<div class="circuit-container js-circuit-container">
-			<span class="boost-circuit js-circuit"></span>
+@{
+    if (Model.finalResult == null)
+    {
+        <h2>Experiment - 3 : Boost Converter</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="circuit-container js-circuit-container">
+                    <span class="boost-circuit js-circuit"></span>
 
-			<span class="boost-circuit-connection a js-circuit-connection" id="zva"></span>
-			<span class="boost-circuit-connection b js-circuit-connection" id="yhb"></span>
-			<span class="boost-circuit-connection c js-circuit-connection" id="xvc"></span>
-			<span class="boost-circuit-connection d js-circuit-connection" id="whd"></span>
-			<span class="boost-circuit-connection e js-circuit-connection" id="vve"></span>
-			<span class="boost-circuit-connection f js-circuit-connection" id="uvf"></span>
-			<span class="boost-circuit-connection g js-circuit-connection" id="thg"></span>
-		</div>
-	</div>
+                    <span class="boost-circuit-connection a js-circuit-connection" id="zva"></span>
+                    <span class="boost-circuit-connection b js-circuit-connection" id="yhb"></span>
+                    <span class="boost-circuit-connection c js-circuit-connection" id="xvc"></span>
+                    <span class="boost-circuit-connection d js-circuit-connection" id="whd"></span>
+                    <span class="boost-circuit-connection e js-circuit-connection" id="vve"></span>
+                    <span class="boost-circuit-connection f js-circuit-connection" id="uvf"></span>
+                    <span class="boost-circuit-connection g js-circuit-connection" id="thg"></span>
+                </div>
+            </div>
 
-	<div class="col-md-4">
-		<div class="drag-container">
-			<div id="di21" class="drag-item">
-				<p>Resistor</p>
-				<img src="~/images/practicalExperiments/buckConverter/resistor.svg" id="avu" class="img-svg rotateimg90" />
-			</div>
-		</div>
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Inductor</p>
-				<img src="~/images/practicalExperiments/buckConverter/inductor.svg" id="bhy" class="img-svg" />
-			</div>
-		</div>
+            <div class="col-md-4">
+                <div class="drag-container">
+                    <div id="di21" class="drag-item">
+                        <p>Resistor</p>
+                        <img src="~/images/practicalExperiments/buckConverter/resistor.svg" id="avu" class="img-svg rotateimg90" />
+                    </div>
+                </div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Inductor</p>
+                        <img src="~/images/practicalExperiments/buckConverter/inductor.svg" id="bhy" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Diode</p>
-				<img src="~/images/practicalExperiments/buckConverter/diode.svg" id="chw" class="img-svg" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Diode</p>
+                        <img src="~/images/practicalExperiments/buckConverter/diode.svg" id="chw" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Transistor</p>
-				<img src="~/images/practicalExperiments/buckConverter/transistor.svg" id="dvx" class="img-svg rotateimg90" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Transistor</p>
+                        <img src="~/images/practicalExperiments/buckConverter/transistor.svg" id="dvx" class="img-svg rotateimg90" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Capacitor</p>
-				<img src="~/images/practicalExperiments/buckConverter/capacitor_elko.svg" id="evv" class="img-svg" />
-			</div>
-		</div>
-		<div class="drag-container">
-			<div id="di23" class="drag-item">
-				<p>Battery</p>
-				<img src="https://upload.wikimedia.org/wikipedia/commons/archive/d/df/20070922204459%21Battery_symbol.svg"
-					 id="fvz" class="img-svg" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Capacitor</p>
+                        <img src="~/images/practicalExperiments/buckConverter/capacitor_elko.svg" id="evv" class="img-svg" />
+                    </div>
+                </div>
+                <div class="drag-container">
+                    <div id="di23" class="drag-item">
+                        <p>Battery</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/archive/d/df/20070922204459%21Battery_symbol.svg"
+                             id="fvz" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di23" class="drag-item">
-				<p>PWM</p>
-				<img src="~/images/practicalExperiments/buckConverter/pwmSVG.svg" id="ght" class="img-svg" />
-			</div>
-		</div>
-	</div>
+                <div class="drag-container">
+                    <div id="di23" class="drag-item">
+                        <p>PWM</p>
+                        <img src="~/images/practicalExperiments/buckConverter/pwmSVG.svg" id="ght" class="img-svg" />
+                    </div>
+                </div>
+            </div>
 
-</div>
-<div class="row">
-	<div class="col-md-4">
-		<form id="boostConverter" method="post">
-			<div class="form-group">
-				<label asp-for="Input.Ru"></label>
-				<input asp-for="Input.Ru" class="form-control" />
-				<span asp-validation-for="Input.Ru" class="text-danger"></span>
-			</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <form id="boostConverter" method="post">
+                    <div class="form-group">
+                        <label asp-for="Input.Ru"></label>
+                        <input asp-for="Input.Ru" class="form-control" />
+                        <span asp-validation-for="Input.Ru" class="text-danger"></span>
+                    </div>
 
-			<div class="form-group">
-				<label asp-for="Input.Lu"></label>
-				<input asp-for="Input.Lu" class="form-control" />
-				<span asp-validation-for="Input.Lu" class="text-danger"></span>
-			</div>
+                    <div class="form-group">
+                        <label asp-for="Input.Lu"></label>
+                        <input asp-for="Input.Lu" class="form-control" />
+                        <span asp-validation-for="Input.Lu" class="text-danger"></span>
+                    </div>
 
-			<div class="form-group">
-				<label asp-for="Input.Du"></label>
-				<input asp-for="Input.Du" class="form-control" />
-				<span asp-validation-for="Input.Du" class="text-danger"></span>
-			</div>
+                    <div class="form-group">
+                        <label asp-for="Input.Du"></label>
+                        <input asp-for="Input.Du" class="form-control" />
+                        <span asp-validation-for="Input.Du" class="text-danger"></span>
+                    </div>
 
-			<div class="form-group">
-				<label asp-for="Input.Cu"></label>
-				<input asp-for="Input.Cu" class="form-control" />
-				<span asp-validation-for="Input.Cu" class="text-danger"></span>
-			</div>
+                    <div class="form-group">
+                        <label asp-for="Input.Cu"></label>
+                        <input asp-for="Input.Cu" class="form-control" />
+                        <span asp-validation-for="Input.Cu" class="text-danger"></span>
+                    </div>
 
-			<div class="form-group">
-				<label asp-for="Input.Vin"></label>
-				<input asp-for="Input.Vin" class="form-control" />
-				<span asp-validation-for="Input.Vin" class="text-danger"></span>
-			</div>
+                    <div class="form-group">
+                        <label asp-for="Input.Vin"></label>
+                        <input asp-for="Input.Vin" class="form-control" />
+                        <span asp-validation-for="Input.Vin" class="text-danger"></span>
+                    </div>
 
-			<div class="form-group">
-				<label asp-for="Input.Fu"></label>
-				<input asp-for="Input.Fu" class="form-control" />
-				<span asp-validation-for="Input.Fu" class="text-danger"></span>
-			</div>
+                    <div class="form-group">
+                        <label asp-for="Input.Fu"></label>
+                        <input asp-for="Input.Fu" class="form-control" />
+                        <span asp-validation-for="Input.Fu" class="text-danger"></span>
+                    </div>
 
-			<input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
-		</form>
-	</div>
-	<!--
-		<div class="col-md-6">
-			<center><h3>Schematic Diagram</h3></center>
-			<div class="circuit-container js-circuit-container">
+                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
+                </form>
+            </div>
 
-				<span class="boost-circuit-auto js-circuit"></span>
+            <div class="col-md-6">
+                <center><h3>Schematic Diagram</h3></center>
+                <div class="circuit-container js-circuit-container">
 
-				<span class="boost-circuit-connection h" id="h"></span>
-				<span class="boost-circuit-connection i" id="i"></span>
-				<span class="boost-circuit-connection j" id="j"></span>
-				<span class="boost-circuit-connection k" id="k"></span>
-				<span class="boost-circuit-connection l" id="l"></span>
-				<span class="boost-circuit-connection m" id="m"></span>
-				<span class="boost-circuit-connection n" id="n"></span>
+                    <span class="boost-circuit-auto js-circuit"></span>
 
-			</div>
-		</div>
-	-->
-</div>
+                    <span class="boost-circuit-connection h" id="h"></span>
+                    <span class="boost-circuit-connection i" id="i"></span>
+                    <span class="boost-circuit-connection j" id="j"></span>
+                    <span class="boost-circuit-connection k" id="k"></span>
+                    <span class="boost-circuit-connection l" id="l"></span>
+                    <span class="boost-circuit-connection m" id="m"></span>
+                    <span class="boost-circuit-connection n" id="n"></span>
+
+                </div>
+            </div>
+            
+        </div>
+    }
+    else
+    {
+        <h2>Experiment - 3 : Boost Converter Result</h2>
+        <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript">
+            var dataJSON = "@Model.finalResult";
+            dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
+            console.log(dataJSON);
+
+			var Current = [];
+            var TimeCurrent = [];
+
+            var xMaxRange = dataJSON["T"][0];
+            var yMaxRange = dataJSON["I"][0];
+            var xMinRange = dataJSON["T"][0];
+            var yMinRange = dataJSON["I"][0];
+
+            for (var i = 0; i < 25; i++) {
+                Current[i] = dataJSON["I"][i];
+                if (yMaxRange < Current[i]) {
+                    yMaxRange = Current[i];
+				}
+                if (yMinRange > Current[i]) {
+                    yMinRange = Current[i];
+				}
+
+                TimeCurrent[i] = dataJSON["T"][i];
+                if (xMaxRange < TimeCurrent[i]) {
+                    xMaxRange = TimeCurrent[i];
+				}
+                if (xMinRange > TimeCurrent[i]) {
+                    xMinRange = TimeCurrent[i];
+				}
+            }
+
+            console.log(yMaxRange);
+            console.log(yMinRange);
+            console.log(xMaxRange);
+            console.log(xMinRange);
+
+            var dataOne = [
+                [{ 'x': TimeCurrent[0], 'y': Current[0] }]
+            ];
+
+            for (var j = 0; j < 25; j++) {
+                dataOne[0].push({
+                    'x': TimeCurrent[j],
+                    'y': Current[j]
+                });
+            }
+
+            var Voltage = [];
+            var TimeVoltage = [];
+
+            var x1MaxRange = dataJSON["Ti"][0];
+            var y1MaxRange = dataJSON["Vograph"][0][0];
+            var x1MinRange = dataJSON["Ti"][0];
+            var y1MinRange = dataJSON["Vograph"][0][0];
+
+            for (i in dataJSON["Ti"]) {
+                Voltage[i] = dataJSON["Vograph"][i][0];                
+                if (y1MaxRange < Voltage[i]) {
+                    y1MaxRange = Voltage[i];
+                }
+                if (y1MinRange > Voltage[i]) {
+                    y1MinRange = Voltage[i];
+                }
+
+                TimeVoltage[i] = dataJSON["Ti"][i];
+                if (x1MaxRange < TimeVoltage[i]) {
+                    x1MaxRange = TimeVoltage[i];
+                }
+                if (x1MinRange > TimeVoltage[i]) {
+                    x1MinRange = TimeVoltage[i];
+                }
+            }
+
+            var dataTwo = [
+                [{ 'x': TimeVoltage[0], 'y': Voltage[0] }]
+			];
+
+			for (j in dataJSON["Ti"]) {
+                dataTwo[0].push({
+                    'x': TimeVoltage[j],
+                    'y': Voltage[j]
+				});
+            }
+
+            var graphOneXLabel = "Time";
+            var graphOneYLabel = "Current";
+            var graphTwoXLabel = "Time";
+            var graphTwoYLabel = "Voltage";
+        </script>
+        
+        <div class="row" id="graphOne">
+            <h3>Current graph</h3>
+            <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+        </div>
+        <div class="row" id="graphTwo">
+            <h3>Voltage graph</h3>
+            <script type="text/javascript" src="~/js/graph/graphTwo.js"></script>
+        </div>
+    }
+}

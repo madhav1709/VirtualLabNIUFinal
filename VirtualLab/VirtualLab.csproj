@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Identity\Pages\Course\" />
+    <Folder Include="Areas\Identity\Pages\Grades\" />
     <Folder Include="Areas\Identity\Services\" />
     <Folder Include="wwwroot\presentations\" />
   </ItemGroup>

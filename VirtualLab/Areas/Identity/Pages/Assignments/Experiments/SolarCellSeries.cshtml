@@ -1,142 +1,245 @@
 ﻿@page
 @model SolarCellSeriesModel
 @{
-	ViewData["Title"] = "Solar Cell - Series Connection Experiment";
+    ViewData["Title"] = "Solar Cell - Series Connection Experiment";
 }
 
 @section scripts {
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="~/js/practicalExperiments/solarCellSeries.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/js/practicalExperiments/solarCellSeries.js"></script>
 }
 <br>
 
 <link rel="stylesheet" type="text/css" href="~/css/practicalExperiments/solarCellSeries.css">
-<h2>Experiment - 5 : Solar Cells - Series Connection</h2>
-<div class="row">
+@{
+    if (Model.finalResult == null)
+    {
+        <h2>Experiment - 5 : Solar Cells - Series Connection</h2>
+        <div class="row">
 
-	<div class="col-md-8">
-		<div class="circuit-container js-circuit-container">
-			<span class="solarCellSeries-circuit js-circuit"></span>
+            <div class="col-md-8">
+                <div class="circuit-container js-circuit-container">
+                    <span class="solarCellSeries-circuit js-circuit"></span>
 
-			<span class="solarCellSeries-circuit-connection a js-circuit-connection" id="zha0"></span>
-			<span class="solarCellSeries-circuit-connection b js-circuit-connection" id="zhb0"></span>
-			<span class="solarCellSeries-circuit-connection c js-circuit-connection" id="zhc0"></span>
-			<span class="solarCellSeries-circuit-connection d js-circuit-connection" id="yhd0"></span>
-		</div>
-	</div>
+                    <span class="solarCellSeries-circuit-connection a js-circuit-connection" id="zha0"></span>
+                    <span class="solarCellSeries-circuit-connection b js-circuit-connection" id="zhb0"></span>
+                    <span class="solarCellSeries-circuit-connection c js-circuit-connection" id="zhc0"></span>
+                    <span class="solarCellSeries-circuit-connection d js-circuit-connection" id="yhd0"></span>
+                </div>
+            </div>
 
-	<div class="col-md-4">
-		<div class="drag-container">
-			<div id="di21" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="ahz0" class="img-svg rotateimg90" />
-			</div>
-		</div>
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="bhz0" class="img-svg" />
-			</div>
-		</div>
+            <div class="col-md-4">
+                <div class="drag-container">
+                    <div id="di21" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="ahz0" class="img-svg rotateimg90" />
+                    </div>
+                </div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="bhz0" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="chz0" class="img-svg rotateimg90" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="chz0" class="img-svg rotateimg90" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Voltmeter</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/voltmeter.png" id="dhy0" class="img-svg" />
-			</div>
-		</div>
-	</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Voltmeter</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/voltmeter.png" id="dhy0" class="img-svg" />
+                    </div>
+                </div>
+            </div>
 
-</div>
-<br /><br />
-<hr />
-<br /><br />
-<div class="row">
+        </div>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <div class="row">
 
-	<div class="col-md-8">
-		<div class="circuit-container js-circuit-container">
-			<span class="solarCellSeries-circuit-auto js-circuit"></span>
+            <div class="col-md-8">
+                <div class="circuit-container js-circuit-container">
+                    <span class="solarCellSeries-circuit-auto js-circuit"></span>
 
-			<span class="solarCellSeries-circuit-connection e js-circuit-connection" id="zha1"></span>
-			<span class="solarCellSeries-circuit-connection f js-circuit-connection" id="zhb1"></span>
-			<span class="solarCellSeries-circuit-connection g js-circuit-connection" id="zhc1"></span>
-			<span class="solarCellSeries-circuit-connection h js-circuit-connection" id="yhd1"></span>
-			<span class="solarCellSeries-circuit-connection i js-circuit-connection" id="xhe1"></span>
-			<span class="solarCellSeries-circuit-connection j js-circuit-connection" id="whf1"></span>
-		</div>
-	</div>
+                    <span class="solarCellSeries-circuit-connection e js-circuit-connection" id="zha1"></span>
+                    <span class="solarCellSeries-circuit-connection f js-circuit-connection" id="zhb1"></span>
+                    <span class="solarCellSeries-circuit-connection g js-circuit-connection" id="zhc1"></span>
+                    <span class="solarCellSeries-circuit-connection h js-circuit-connection" id="yhd1"></span>
+                    <span class="solarCellSeries-circuit-connection i js-circuit-connection" id="xhe1"></span>
+                    <span class="solarCellSeries-circuit-connection j js-circuit-connection" id="whf1"></span>
+                </div>
+            </div>
 
-	<div class="col-md-4">
-		<div class="drag-container">
-			<div id="di21" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="ahz1" class="img-svg rotateimg90" />
-			</div>
-		</div>
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="bhz1" class="img-svg" />
-			</div>
-		</div>
+            <div class="col-md-4">
+                <div class="drag-container">
+                    <div id="di21" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="ahz1" class="img-svg rotateimg90" />
+                    </div>
+                </div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="bhz1" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="chz1" class="img-svg rotateimg90" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/solarpanel.png" id="chz1" class="img-svg rotateimg90" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Voltmeter</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/voltmeter.png" id="dhw1" class="img-svg" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Voltmeter</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/voltmeter.png" id="dhw1" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Resistor</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/resistor.svg" id="ehy1" class="img-svg" />
-			</div>
-		</div>
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Ammeter</p>
-				<img src="~/images/practicalExperiments/solarCellsSeries/ammeter.png" id="fhx1" class="img-svg" />
-			</div>
-		</div>
-	</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Resistor</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/resistor.svg" id="ehy1" class="img-svg" />
+                    </div>
+                </div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Ammeter</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/ammeter.png" id="fhx1" class="img-svg" />
+                    </div>
+                </div>
+            </div>
 
-</div>
+        </div>
 
-<div class="row">
-	<div class="col-md-4">
-		<form id="solarCellSeries" method="post">
-			<div class="form-group">
-				<label asp-for="Input.Suns"></label>
-				<input asp-for="Input.Suns" class="form-control" />
-				<span asp-validation-for="Input.Suns" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="Input.Te"></label>
-				<input asp-for="Input.Te" class="form-control" />
-				<span asp-validation-for="Input.Te" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="Input.Rl"></label>
-				<input asp-for="Input.Rl" class="form-control" />
-				<span asp-validation-for="Input.Rl" class="text-danger"></span>
-			</div>
-			<input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
-		</form>
-	</div>
-</div>
+        <div class="row">
+            <div class="col-md-4">
+                <form id="solarCellSeries" method="post">
+                    <div class="form-group">
+                        <label asp-for="Input.Suns"></label>
+                        <input asp-for="Input.Suns" class="form-control" />
+                        <span asp-validation-for="Input.Suns" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.TaC"></label>
+                        <input asp-for="Input.TaC" class="form-control" />
+                        <span asp-validation-for="Input.TaC" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Ra"></label>
+                        <input asp-for="Input.Ra" class="form-control" />
+                        <span asp-validation-for="Input.Ra" class="text-danger"></span>
+                    </div>
+                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
+                </form>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h2>Experiment - 6 : Solar Cells - Series Connection Result</h2>
+        <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript">
+            var dataJSON = "@Model.finalResult";
+            dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
+
+            if (sessionStorage.getItem("finalVoltageSolarSeries") === null) {
+                var FinalVoltage = [];
+                var FinalCurrent = [];
+            }
+
+            if (sessionStorage.getItem("finalVoltageSolarSeries") !== null) {
+                var FinalVoltage = sessionStorage['finalVoltageSolarSeries'].split(",");
+                var FinalCurrent = sessionStorage['finalCurrentSolarSeries'].split(",");
+
+                sessionStorage.removeItem('finalVoltageSolarSeries');
+                sessionStorage.removeItem('finalCurrentSolarSeries');
+            }
+
+
+            var Voltage = dataJSON["1"];
+            var Current = dataJSON["0"];
+
+            FinalVoltage.push(Voltage);
+            FinalCurrent.push(Current);
+
+            sessionStorage.setItem('finalVoltageSolarSeries', FinalVoltage);
+            sessionStorage.setItem('finalCurrentSolarSeries', FinalCurrent);
+            console.log(sessionStorage['finalVoltageSolarSeries']);
+
+            var xMaxRange = parseFloat(FinalCurrent[0]);
+            var yMaxRange = parseFloat(FinalVoltage[0]);
+            var xMinRange = parseFloat(FinalCurrent[0]);
+            var yMinRange = parseFloat(FinalVoltage[0]);
+
+            var dataOne = [
+                [{ 'x': parseFloat(FinalCurrent[0]), 'y': parseFloat(FinalVoltage[0]) }]
+			];
+
+            for (var i = 0; i < FinalCurrent.length; i++) {
+                if (yMaxRange < parseFloat(FinalVoltage[i])) {
+                    yMaxRange = parseFloat(FinalVoltage[i]);
+                }
+                if (yMinRange > parseFloat(FinalVoltage[i])) {
+                    yMinRange = parseFloat(FinalVoltage[i]);
+                }
+
+                if (xMaxRange < parseFloat(FinalCurrent[i])) {
+                    xMaxRange = parseFloat(FinalCurrent[i]);
+                }
+                if (xMinRange > parseFloat(FinalCurrent[i])) {
+                    xMinRange = parseFloat(FinalCurrent[i]);
+                }
+
+                dataOne[0].push({
+                    'x': parseFloat(FinalCurrent[i]),
+                    'y': parseFloat(FinalVoltage[i])
+				});
+			}
+
+            var graphOneXLabel = "Current";
+            var graphOneYLabel = "Voltage";
+
+            console.log(dataOne);
+        </script>
+
+        <div class="row">
+            <div class="col-md-4">
+                <form id="solarPanel" method="post">
+                    <div class="form-group">
+                        <label asp-for="Input.Suns"></label>
+                        <input asp-for="Input.Suns" class="form-control" />
+                        <span asp-validation-for="Input.Suns" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.TaC"></label>
+                        <input asp-for="Input.TaC" class="form-control" />
+                        <span asp-validation-for="Input.TaC" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Ra"></label>
+                        <input asp-for="Input.Ra" class="form-control" />
+                        <span asp-validation-for="Input.Ra" class="text-danger"></span>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </form>
+            </div>
+            <div class="col-md-6" id="graphOne">
+                <h3>Graph</h3>
+                <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    }
+}

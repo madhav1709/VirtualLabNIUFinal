@@ -21,10 +21,12 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 		{
 			[Required]
 			[Display(Name = "Reference Voltage (V)")]
-			public int VO1 { get; set; }
+			public double VO1 { get; set; }
 		}
 
-		public void OnGet()
+        public string finalResult = null;
+
+        public void OnGet()
 		{
 		}
 
@@ -49,7 +51,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 				// Send the message to the connected TcpServer. 
 				stream.Write(data, 0, data.Length);
 
-				Thread.Sleep(5000);
+				Thread.Sleep(10000);
 
 				// Check to see if this NetworkStream is readable.
 				if (stream.CanRead)
@@ -71,7 +73,9 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 					// Print out the received message to the console.
 					Console.WriteLine("You received the following message : " +
 												 myCompleteMessage);
-				}
+
+                    finalResult = myCompleteMessage.ToString();
+                }
 				else
 				{
 					Console.WriteLine("Sorry.  You cannot read from this NetworkStream.");

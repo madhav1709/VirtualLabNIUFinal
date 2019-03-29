@@ -74,7 +74,7 @@ namespace VirtualLab.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/Identity/Course/Index");
+            returnUrl = returnUrl ?? Url.Content("~/Identity/Assignments/Index");
             if (ModelState.IsValid)
             {
                 var user = new VirtualLabUser {

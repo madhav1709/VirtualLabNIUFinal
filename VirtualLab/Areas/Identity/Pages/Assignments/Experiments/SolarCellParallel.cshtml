@@ -1,142 +1,245 @@
 ﻿@page
 @model SolarCellParallelModel
 @{
-	ViewData["Title"] = "Solar Cell - Parallel Connection Experiment";
+    ViewData["Title"] = "Solar Cell - Parallel Connection Experiment";
 }
 
 @section scripts {
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="~/js/practicalExperiments/solarCellParallel.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/js/practicalExperiments/solarCellParallel.js"></script>
 }
 <br>
 
 <link rel="stylesheet" type="text/css" href="~/css/practicalExperiments/solarCellParallel.css">
-<h2>Experiment - 6 : Solar Cells - Parallel Connection</h2>
-<div class="row">
+@{
+    if (Model.finalResult == null)
+    {
+        <h2>Experiment - 6 : Solar Cells - Parallel Connection</h2>
+        <div class="row">
 
-	<div class="col-md-8">
-		<div class="circuit-container js-circuit-container">
-			<span class="solarCellParallel-circuit js-circuit"></span>
+            <div class="col-md-8">
+                <div class="circuit-container js-circuit-container">
+                    <span class="solarCellParallel-circuit js-circuit"></span>
 
-			<span class="solarCellParallel-circuit-connection a js-circuit-connection" id="zva0"></span>
-			<span class="solarCellParallel-circuit-connection b js-circuit-connection" id="zvb0"></span>
-			<span class="solarCellParallel-circuit-connection c js-circuit-connection" id="zvc0"></span>
-			<span class="solarCellParallel-circuit-connection d js-circuit-connection" id="yvd0"></span>
-		</div>
-	</div>
+                    <span class="solarCellParallel-circuit-connection a js-circuit-connection" id="zva0"></span>
+                    <span class="solarCellParallel-circuit-connection b js-circuit-connection" id="zvb0"></span>
+                    <span class="solarCellParallel-circuit-connection c js-circuit-connection" id="zvc0"></span>
+                    <span class="solarCellParallel-circuit-connection d js-circuit-connection" id="yvd0"></span>
+                </div>
+            </div>
 
-	<div class="col-md-4">
-		<div class="drag-container">
-			<div id="di21" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="avz0" class="img-svg rotateimg90" />
-			</div>
-		</div>
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="bvz0" class="img-svg" />
-			</div>
-		</div>
+            <div class="col-md-4">
+                <div class="drag-container">
+                    <div id="di21" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="avz0" class="img-svg rotateimg90" />
+                    </div>
+                </div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="bvz0" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="cvz0" class="img-svg rotateimg90" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="cvz0" class="img-svg rotateimg90" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Voltmeter</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/voltmeter.png" id="dvy0" class="img-svg" />
-			</div>
-		</div>
-	</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Voltmeter</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/voltmeter.png" id="dvy0" class="img-svg" />
+                    </div>
+                </div>
+            </div>
 
-</div>
-<br /><br />
-<hr />
-<br /><br />
-<div class="row">
+        </div>
+        <br /><br />
+        <hr />
+        <br /><br />
+        <div class="row">
 
-	<div class="col-md-8">
-		<div class="circuit-container js-circuit-container">
-			<span class="solarCellParallel-circuit-auto js-circuit"></span>
+            <div class="col-md-8">
+                <div class="circuit-container js-circuit-container">
+                    <span class="solarCellParallel-circuit-auto js-circuit"></span>
 
-			<span class="solarCellParallel-circuit-connection e js-circuit-connection" id="zva1"></span>
-			<span class="solarCellParallel-circuit-connection f js-circuit-connection" id="zvb1"></span>
-			<span class="solarCellParallel-circuit-connection g js-circuit-connection" id="zvc1"></span>
-			<span class="solarCellParallel-circuit-connection h js-circuit-connection" id="yhd1"></span>
-			<span class="solarCellParallel-circuit-connection i js-circuit-connection" id="xve1"></span>
-			<span class="solarCellParallel-circuit-connection j js-circuit-connection" id="wvf1"></span>
-		</div>
-	</div>
+                    <span class="solarCellParallel-circuit-connection e js-circuit-connection" id="zva1"></span>
+                    <span class="solarCellParallel-circuit-connection f js-circuit-connection" id="zvb1"></span>
+                    <span class="solarCellParallel-circuit-connection g js-circuit-connection" id="zvc1"></span>
+                    <span class="solarCellParallel-circuit-connection h js-circuit-connection" id="yhd1"></span>
+                    <span class="solarCellParallel-circuit-connection i js-circuit-connection" id="xve1"></span>
+                    <span class="solarCellParallel-circuit-connection j js-circuit-connection" id="wvf1"></span>
+                </div>
+            </div>
 
-	<div class="col-md-4">
-		<div class="drag-container">
-			<div id="di21" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="avz1" class="img-svg rotateimg90" />
-			</div>
-		</div>
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="bvz1" class="img-svg" />
-			</div>
-		</div>
+            <div class="col-md-4">
+                <div class="drag-container">
+                    <div id="di21" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="avz1" class="img-svg rotateimg90" />
+                    </div>
+                </div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="bvz1" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Solar Panel</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="cvz1" class="img-svg rotateimg90" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Solar Panel</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/solarpanel.png" id="cvz1" class="img-svg rotateimg90" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Voltmeter</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/voltmeter.png" id="dvw1" class="img-svg" />
-			</div>
-		</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Voltmeter</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/voltmeter.png" id="dvw1" class="img-svg" />
+                    </div>
+                </div>
 
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Resistor</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/resistor.svg" id="evx1" class="img-svg rotateimg90" />
-			</div>
-		</div>
-		<div class="drag-container">
-			<div id="di22" class="drag-item">
-				<p>Ammeter</p>
-				<img src="~/images/practicalExperiments/solarCellsParallel/ammeter.png" id="fhy1" class="img-svg" />
-			</div>
-		</div>
-	</div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Resistor</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/resistor.svg" id="evx1" class="img-svg rotateimg90" />
+                    </div>
+                </div>
+                <div class="drag-container">
+                    <div id="di22" class="drag-item">
+                        <p>Ammeter</p>
+                        <img src="~/images/practicalExperiments/solarCellsParallel/ammeter.png" id="fhy1" class="img-svg" />
+                    </div>
+                </div>
+            </div>
 
-</div>
+        </div>
 
-<div class="row">
-	<div class="col-md-4">
-		<form id="solarCellParallel" method="post">
-			<div class="form-group">
-				<label asp-for="Input.Suns"></label>
-				<input asp-for="Input.Suns" class="form-control" />
-				<span asp-validation-for="Input.Suns" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="Input.Te"></label>
-				<input asp-for="Input.Te" class="form-control" />
-				<span asp-validation-for="Input.Te" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="Input.Rl"></label>
-				<input asp-for="Input.Rl" class="form-control" />
-				<span asp-validation-for="Input.Rl" class="text-danger"></span>
-			</div>
-			<input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
-		</form>
-	</div>
-</div>
+        <div class="row">
+            <div class="col-md-4">
+                <form id="solarCellParallel" method="post">
+                    <div class="form-group">
+                        <label asp-for="Input.Suns"></label>
+                        <input asp-for="Input.Suns" class="form-control" />
+                        <span asp-validation-for="Input.Suns" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.TaC"></label>
+                        <input asp-for="Input.TaC" class="form-control" />
+                        <span asp-validation-for="Input.TaC" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Ra"></label>
+                        <input asp-for="Input.Ra" class="form-control" />
+                        <span asp-validation-for="Input.Ra" class="text-danger"></span>
+                    </div>
+                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
+                </form>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h2>Experiment - 7 : Solar Cells - Parallel Connection Result</h2>
+        <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript">
+            var dataJSON = "@Model.finalResult";
+            dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
+
+            if (sessionStorage.getItem("finalVoltageSolarParallel") === null) {
+                var FinalVoltage = [];
+                var FinalCurrent = [];
+            }
+
+            if (sessionStorage.getItem("finalVoltageSolarParallel") !== null) {
+                var FinalVoltage = sessionStorage['finalVoltageSolarParallel'].split(",");
+                var FinalCurrent = sessionStorage['finalCurrentSolarParallel'].split(",");
+
+                sessionStorage.removeItem('finalVoltageSolarParallel');
+                sessionStorage.removeItem('finalCurrentSolarParallel');
+            }
+
+
+            var Voltage = dataJSON["1"];
+            var Current = dataJSON["0"];
+
+            FinalVoltage.push(Voltage);
+            FinalCurrent.push(Current);
+
+            sessionStorage.setItem('finalVoltageSolarParallel', FinalVoltage);
+            sessionStorage.setItem('finalCurrentSolarParallel', FinalCurrent);
+            console.log(sessionStorage['finalVoltageSolarParallel']);
+
+            var xMaxRange = parseFloat(FinalCurrent[0]);
+            var yMaxRange = parseFloat(FinalVoltage[0]);
+            var xMinRange = parseFloat(FinalCurrent[0]);
+            var yMinRange = parseFloat(FinalVoltage[0]);
+
+            var dataOne = [
+                [{ 'x': parseFloat(FinalCurrent[0]), 'y': parseFloat(FinalVoltage[0]) }]
+			];
+
+            for (var i = 0; i < FinalCurrent.length; i++) {
+                if (yMaxRange < parseFloat(FinalVoltage[i])) {
+                    yMaxRange = parseFloat(FinalVoltage[i]);
+                }
+                if (yMinRange > parseFloat(FinalVoltage[i])) {
+                    yMinRange = parseFloat(FinalVoltage[i]);
+                }
+
+                if (xMaxRange < parseFloat(FinalCurrent[i])) {
+                    xMaxRange = parseFloat(FinalCurrent[i]);
+                }
+                if (xMinRange > parseFloat(FinalCurrent[i])) {
+                    xMinRange = parseFloat(FinalCurrent[i]);
+                }
+
+                dataOne[0].push({
+                    'x': parseFloat(FinalCurrent[i]),
+                    'y': parseFloat(FinalVoltage[i])
+				});
+			}
+
+            var graphOneXLabel = "Current";
+            var graphOneYLabel = "Voltage";
+            
+            console.log(dataOne);
+        </script>
+
+        <div class="row">
+            <div class="col-md-4">
+                <form id="solarPanel" method="post">
+                    <div class="form-group">
+                        <label asp-for="Input.Suns"></label>
+                        <input asp-for="Input.Suns" class="form-control" />
+                        <span asp-validation-for="Input.Suns" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.TaC"></label>
+                        <input asp-for="Input.TaC" class="form-control" />
+                        <span asp-validation-for="Input.TaC" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Ra"></label>
+                        <input asp-for="Input.Ra" class="form-control" />
+                        <span asp-validation-for="Input.Ra" class="text-danger"></span>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </form>
+            </div>
+            <div class="col-md-6" id="graphOne">
+                <h3>Graph</h3>
+                <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    }
+}
