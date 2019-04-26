@@ -107,8 +107,8 @@
 
                 <div class="drag-container">
                     <div id="di22" class="drag-item">
-                        <p>Resistor</p>
-                        <img src="~/images/practicalExperiments/solarCellsSeries/resistor.svg" id="ehy1" class="img-svg" />
+                        <p>Variable Resistor</p>
+                        <img src="~/images/practicalExperiments/solarCellsSeries/Variable_Resistor.svg" id="ehy1" class="img-svg" />
                     </div>
                 </div>
                 <div class="drag-container">
@@ -151,30 +151,36 @@
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
             dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
+            console.log(dataJSON);
 
             if (sessionStorage.getItem("finalVoltageSolarSeries") === null) {
                 var FinalVoltage = [];
                 var FinalCurrent = [];
+                var FinalResistance = [];
             }
 
             if (sessionStorage.getItem("finalVoltageSolarSeries") !== null) {
                 var FinalVoltage = sessionStorage['finalVoltageSolarSeries'].split(",");
                 var FinalCurrent = sessionStorage['finalCurrentSolarSeries'].split(",");
+                var FinalResistance = sessionStorage['finalResistanceSolarSeries'].split(",");
 
                 sessionStorage.removeItem('finalVoltageSolarSeries');
                 sessionStorage.removeItem('finalCurrentSolarSeries');
+                sessionStorage.removeItem('finalResistanceSolarSeries');
             }
 
 
             var Voltage = dataJSON["1"];
             var Current = dataJSON["0"];
+            console.log(Voltage);
 
             FinalVoltage.push(Voltage);
             FinalCurrent.push(Current);
+            FinalResistance.push(@Model.Input.Ra);
 
             sessionStorage.setItem('finalVoltageSolarSeries', FinalVoltage);
             sessionStorage.setItem('finalCurrentSolarSeries', FinalCurrent);
-            console.log(sessionStorage['finalVoltageSolarSeries']);
+            sessionStorage.setItem('finalResistanceSolarSeries', FinalResistance);
 
             var xMaxRange = parseFloat(FinalCurrent[0]);
             var yMaxRange = parseFloat(FinalVoltage[0]);
@@ -206,12 +212,14 @@
 				});
 			}
 
+            console.log(yMaxRange);
+            console.log(yMinRange);
+
             var graphOneXLabel = "Current";
             var graphOneYLabel = "Voltage";
 
-            console.log(dataOne);
         </script>
-
+        
         <div class="row">
             <div class="col-md-4">
                 <form id="solarPanel" method="post">
@@ -233,13 +241,81 @@
                     <input type="submit" class="btn btn-primary" value="Submit">
                 </form>
             </div>
-            <div class="col-md-6" id="graphOne">
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Resistance</th>
+                            <th scope="col">Open Circuit Voltage</th>
+                            <th scope="col">Short Circuit Current</th>
+                            <th scope="col">Power</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablePrint"></tbody>
+                </table>
+                <script language="javascript" type="text/javascript">
+                    var myTable = "";
+                    for (var i = 0; i < FinalCurrent.length; i++) {
+                        myTable += "<tr><th scope='row'>" + (i + 1) + "</th>";
+                        myTable += "<td>" + parseFloat(FinalResistance[i]) + "</td>";
+                        myTable += "<td>" + parseFloat(FinalVoltage[i]) + "</td>";
+                        myTable += "<td>" + parseFloat(FinalCurrent[i]) + "</td>";
+                        myTable += "<td>" + (parseFloat(FinalCurrent[i]) * parseFloat(FinalVoltage[i])) + "</td>";
+                        myTable += "</tr>";
+                    }
+
+                    document.getElementById('tablePrint').innerHTML = myTable;
+                </script>
+                
+            </div>
+        </div>
+        <div class="row" id="graphOne">
+            <div class="col-md-5" id="graphOne">
                 <h3>Graph</h3>
                 <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
             </div>
         </div>
-        <div class="row">
 
+        <div class="row" id="graphTwo">
+            <h3>Power Graph</h3>
+            <script type="text/javascript">
+
+                var dataTwo = [
+                    [{ 'x': parseFloat(FinalVoltage[0]), 'y': (parseFloat(FinalCurrent[0]) * parseFloat(FinalVoltage[0])) }]
+                ];
+
+                var x1MaxRange = parseFloat(FinalVoltage[0]);
+                var y1MaxRange = (parseFloat(FinalCurrent[0]) * parseFloat(FinalVoltage[0]));
+                var x1MinRange = parseFloat(FinalVoltage[0]);
+                var y1MinRange = (parseFloat(FinalCurrent[0]) * parseFloat(FinalVoltage[0]));
+
+
+                for (var i = 0; i < FinalCurrent.length; i++) {
+                    if (x1MaxRange < parseFloat(FinalVoltage[i])) {
+                        x1MaxRange = parseFloat(FinalVoltage[i]);
+                    }
+                    if (x1MinRange > parseFloat(FinalVoltage[i])) {
+                        x1MinRange = parseFloat(FinalVoltage[i]);
+                    }
+
+                    if (y1MaxRange < (parseFloat(FinalCurrent[i]) * parseFloat(FinalVoltage[i]))) {
+                        y1MaxRange = (parseFloat(FinalCurrent[i]) * parseFloat(FinalVoltage[i]));
+                    }
+                    if (y1MinRange > (parseFloat(FinalCurrent[i]) * parseFloat(FinalVoltage[i]))) {
+                        y1MinRange = (parseFloat(FinalCurrent[i]) * parseFloat(FinalVoltage[i]));
+                    }
+
+                    dataTwo[0].push({
+                        'x': parseFloat(FinalVoltage[i]),
+                        'y': (parseFloat(FinalCurrent[i]) * parseFloat(FinalVoltage[i]))
+                    });
+                }
+
+                var graphTwoXLabel = "Voltage";
+                var graphTwoYLabel = "Power";
+            </script>
+            <script type="text/javascript" src="~/js/graph/graphTwo.js"></script>
         </div>
     }
 }

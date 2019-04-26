@@ -124,7 +124,7 @@
                     <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
                 </form>
             </div>
-            
+
             <div class="col-md-6">
                 <center><h3>Schematic Diagram</h3></center>
                 <div class="circuit-container js-circuit-container">
@@ -141,7 +141,7 @@
 
                 </div>
             </div>
-            
+
 
         </div>
     }
@@ -152,7 +152,8 @@
         <script type="text/javascript">
 			var dataJSON = "@Model.finalResult";
             dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
-            
+            console.log(dataJSON);
+
             var Current = [];
             var TimeCurrent = [];
 
@@ -161,7 +162,7 @@
             var xMinRange = dataJSON["T"][0];
             var yMinRange = dataJSON["I"][0];
 
-            for (var i = 0; i < 25; i++) {
+            for (var i = 0; i < 50000; i++) {
                 Current[i] = dataJSON["I"][i];
                 if (yMaxRange < Current[i]) {
                     yMaxRange = Current[i];
@@ -183,7 +184,7 @@
                 [{ 'x': TimeCurrent[0], 'y': Current[0] }]
             ];
 
-            for (var j = 0; j < 25; j++) {
+            for (var j = 0; j < 50000; j++) {
                 dataOne[0].push({
                     'x': TimeCurrent[j],
                     'y': Current[j]
@@ -246,13 +247,13 @@
             console.log(dataTwo);
         </script>
 
-        <div class="row" id="graphOne">
-            <h3>Current graph</h3>
-            <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
-        </div>
         <div class="row" id="graphTwo">
             <h3>Voltage graph</h3>
             <script type="text/javascript" src="~/js/graph/graphTwo.js"></script>
+        </div>
+        <div class="row" id="graphOne">
+            <h3>Current graph</h3>
+            <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
         </div>
     }
 }

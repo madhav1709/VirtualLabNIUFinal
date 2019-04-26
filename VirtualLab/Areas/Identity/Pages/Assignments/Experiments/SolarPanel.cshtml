@@ -81,69 +81,39 @@
     else
     {
         <h2>Experiment - 5 : Solar Panel Result</h2>
-        <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
             dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
 
-            if (sessionStorage.getItem("finalVoltageSolar") === null) {
+            if (sessionStorage.getItem("finalVoltageSolarPanel") === null) {
                 var FinalVoltage = [];
                 var FinalCurrent = [];
+                var FinalIrridiation = [];
             }
 
-            if (sessionStorage.getItem("finalVoltageSolar") !== null) {
-                var FinalVoltage = sessionStorage['finalVoltageSolar'].split(",");
-                var FinalCurrent = sessionStorage['finalCurrentSolar'].split(",");
+            if (sessionStorage.getItem("finalVoltageSolarPanel") !== null) {
+                var FinalVoltage = sessionStorage['finalVoltageSolarPanel'].split(",");
+                var FinalCurrent = sessionStorage['finalCurrentSolarPanel'].split(",");
+                var FinalIrridiation = sessionStorage['finalIrridiationSolarPanel'].split(",");
 
-                sessionStorage.removeItem('finalVoltageSolar');
-                sessionStorage.removeItem('finalCurrentSolar');
+                sessionStorage.removeItem('finalVoltageSolarPanel');
+                sessionStorage.removeItem('finalCurrentSolarPanel');
+                sessionStorage.removeItem('finalIrridiationSolarPanel');
             }
-           
+
 
             var Voltage = dataJSON["1"];
             var Current = dataJSON["0"];
 
             FinalVoltage.push(Voltage);
             FinalCurrent.push(Current);
+            FinalIrridiation.push(@Model.Input.Suns);
 
-            sessionStorage.setItem('finalVoltageSolar', FinalVoltage);
-            sessionStorage.setItem('finalCurrentSolar', FinalCurrent);
-            console.log(sessionStorage['finalVoltageSolar']);
+            sessionStorage.setItem('finalVoltageSolarPanel', FinalVoltage);
+            sessionStorage.setItem('finalCurrentSolarPanel', FinalCurrent);
+            sessionStorage.setItem('finalIrridiationSolarPanel', FinalIrridiation);
 
-            var xMaxRange = parseFloat(FinalCurrent[0]);
-            var yMaxRange = parseFloat(FinalVoltage[0]);
-            var xMinRange = parseFloat(FinalCurrent[0]);
-            var yMinRange = parseFloat(FinalVoltage[0]);
-
-            var dataOne = [
-                [{ 'x': parseFloat(FinalCurrent[0]), 'y': parseFloat(FinalVoltage[0]) }]
-			];
-
-            for (var i = 0; i < FinalCurrent.length; i++) {
-                if (yMaxRange < parseFloat(FinalVoltage[i])) {
-                    yMaxRange = parseFloat(FinalVoltage[i]);
-                }
-                if (yMinRange > parseFloat(FinalVoltage[i])) {
-                    yMinRange = parseFloat(FinalVoltage[i]);
-                }
-
-                if (xMaxRange < parseFloat(FinalCurrent[i])) {
-                    xMaxRange = parseFloat(FinalCurrent[i]);
-                }
-                if (xMinRange > parseFloat(FinalCurrent[i])) {
-                    xMinRange = parseFloat(FinalCurrent[i]);
-                }
-
-                dataOne[0].push({
-                    'x': parseFloat(FinalCurrent[i]),
-                    'y': parseFloat(FinalVoltage[i])
-				});
-			}
-            
-            var graphOneXLabel = "Current";
-            var graphOneYLabel = "Voltage";
-
-            console.log(dataOne);
+            console.log(sessionStorage['finalVoltageSolarPanel']);
         </script>
 
         <div class="row">
@@ -151,7 +121,7 @@
                 <form id="solarPanel" method="post">
                     <div class="form-group">
                         <label asp-for="Input.Suns"></label>
-                        <input asp-for="Input.Suns" class="form-control" />
+                        <input id="Irridiation" asp-for="Input.Suns" class="form-control" />
                         <span asp-validation-for="Input.Suns" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -163,12 +133,32 @@
                 </form>
             </div>
             <div class="col-md-6" id="graphOne">
-                <h3>Graph</h3>
-                <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Irridiation</th>
+                            <th scope="col">Open Circuit Voltage</th>
+                            <th scope="col">Closed Circuit Current</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablePrint"></tbody>
+                </table>
+                <script language="javascript" type="text/javascript">
+                    var myTable = "";
+                    for (var i = 0; i < FinalCurrent.length; i++) {
+                        myTable += "<tr><th scope='row'>" + (i  + 1) + "</th>";
+                        myTable += "<td>" + parseFloat(FinalIrridiation[i]) + "</td>";
+                        myTable += "<td>" + parseFloat(FinalVoltage[i]) + "</td>";
+                        myTable += "<td>" + parseFloat(FinalCurrent[i]) + "</td>";
+                        myTable += "</tr>";
+                        console.log(FinalCurrent[i]);
+                        console.log(FinalVoltage[i]);
+                    }
+
+                    document.getElementById('tablePrint').innerHTML = myTable;
+                </script>
             </div>
-        </div>
-        <div class="row">
-            
         </div>
     }
 }

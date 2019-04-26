@@ -73,7 +73,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 				// Send the message to the connected TcpServer. 
 				stream.Write(data, 0, data.Length);
 
-				Thread.Sleep(5000);
+				Thread.Sleep(9000);
 
 				// Check to see if this NetworkStream is readable.
 				if (stream.CanRead)
