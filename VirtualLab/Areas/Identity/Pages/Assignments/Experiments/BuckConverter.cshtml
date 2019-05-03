@@ -15,7 +15,7 @@
 @{
     if (Model.finalResult == null)
     {
-        <h2>Experiment - 1 : Buck Converter</h2>
+        <h2>Experiment 1 : Buck Converter</h2>
         <div class="row">
             <div class="col-md-8">
                 <div class="circuit-container js-circuit-container">
@@ -86,9 +86,9 @@
             <div class="col-md-4">
                 <form id="buckConverter" method="post">
                     <div class="form-group">
-                        <label asp-for="Input.Ru"></label>
-                        <input asp-for="Input.Ru" class="form-control" />
-                        <span asp-validation-for="Input.Ru" class="text-danger"></span>
+                        <label asp-for="Input.Vin"></label>
+                        <input asp-for="Input.Vin" class="form-control" />
+                        <span asp-validation-for="Input.Vin" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
@@ -98,21 +98,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Input.Du"></label>
-                        <input asp-for="Input.Du" class="form-control" />
-                        <span asp-validation-for="Input.Du" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
                         <label asp-for="Input.Cu"></label>
                         <input asp-for="Input.Cu" class="form-control" />
                         <span asp-validation-for="Input.Cu" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="Input.Vin"></label>
-                        <input asp-for="Input.Vin" class="form-control" />
-                        <span asp-validation-for="Input.Vin" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
@@ -121,7 +109,21 @@
                         <span asp-validation-for="Input.Fu" class="text-danger"></span>
                     </div>
 
-                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
+                    <div class="form-group">
+                        <label asp-for="Input.Ru"></label>
+                        <input asp-for="Input.Ru" class="form-control" />
+                        <span asp-validation-for="Input.Ru" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Input.Du"></label>
+                        <input asp-for="Input.Du" class="form-control" />
+                        <span asp-validation-for="Input.Du" class="text-danger"></span>
+                    </div>
+
+                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
+
                 </form>
             </div>
 
@@ -202,7 +204,7 @@
             var x1MinRange = dataJSON["Time"][0];
             var y1MinRange = tempRange[0];
 
-            for (var i = 0; i < 102; i++) {
+            for (var i = 0; i < 50000; i++) {
                 TempVoltage[i] = dataJSON["Outputs Data"][0][i];
                 Voltage.push(TempVoltage[i][0]);
 
@@ -224,14 +226,12 @@
 
             console.log(y1MaxRange);
             console.log(y1MinRange);
-            console.log(x1MaxRange);
-            console.log(x1MinRange);
 
             var dataTwo = [
                 [{ 'x': TimeVoltage[0], 'y': Voltage[0] }]
 			];
 
-            for (var j = 0; j < 102; j++) {
+            for (var j = 0; j < 50000; j++) {
                 dataTwo[0].push({
                     'x': TimeVoltage[j],
                     'y': Voltage[j]
@@ -247,13 +247,17 @@
             console.log(dataTwo);
         </script>
 
+        <div class="row" id="graphOne">
+            <h3>Current graph</h3>
+            <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+        </div>
         <div class="row" id="graphTwo">
             <h3>Voltage graph</h3>
             <script type="text/javascript" src="~/js/graph/graphTwo.js"></script>
         </div>
-        <div class="row" id="graphOne">
-            <h3>Current graph</h3>
-            <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+
+        <div class="row">
+            <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
         </div>
     }
 }

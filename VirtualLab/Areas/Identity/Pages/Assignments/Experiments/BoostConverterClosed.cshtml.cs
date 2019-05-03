@@ -21,7 +21,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 		{
 			[Required]
 			[Display(Name = "Reference Voltage (V)")]
-			public double VO1 { get; set; }
+			public double Vo { get; set; }
 		}
 
         public string finalResult = null;
@@ -35,7 +35,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 			string JSONresult = JsonConvert.SerializeObject(Input);
 
 
-			const int portNumber = 6805;
+			const int portNumber = 6804;
 			const string hostName = "127.0.0.1";
 
 			try

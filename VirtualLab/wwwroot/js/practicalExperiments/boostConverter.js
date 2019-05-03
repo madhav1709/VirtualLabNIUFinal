@@ -59,7 +59,6 @@ function placeComponent(s31, s32) {
     }
     else if (s31 == "c") {
         var s = s32.charCodeAt(0) + 7;
-        document.getElementById(String.fromCharCode(s)).classList.add('rotateimg90');
         document.getElementById(String.fromCharCode(s)).style.backgroundImage = 'url(https://upload.wikimedia.org/wikipedia/commons/c/cc/Diode01.svg)';
     }
     else if (s31 == "d") {
@@ -90,11 +89,11 @@ function onBtnClick() {
             }
         }
         if (ftotal == 7) {
-            alert('Congratulations!');
+            alert('Correct');
             var form = document.getElementById('boostConverter');
             form.submit();
         } else {
-            if (!alert('Please check the arrangement and try again!')) {
+            if (!alert('Incorrect, please try again.')) {
                 window.location.reload();
             }
         }

@@ -130,7 +130,6 @@
 		background-size: 80px 80px;
 		left: 173px;
 		top: 10px;
-		z-index: 2;
 	}
 
 	.boost-circuit-connection.j {
@@ -143,7 +142,6 @@
 		background-size: 80px 80px;
 		left: 396px;
 		top: 10px;
-		z-index: 2;
 	}
 
 	.boost-circuit-connection.l {

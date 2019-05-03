@@ -15,7 +15,7 @@
 @{
     if (Model.finalResult == null)
     {
-        <h2>Experiment - 5 : Solar Cells - Series Connection</h2>
+        <h2>Experiment 6 : Solar Cells - Series Connection</h2>
         <div class="row">
 
             <div class="col-md-8">
@@ -139,14 +139,16 @@
                         <input asp-for="Input.Ra" class="form-control" />
                         <span asp-validation-for="Input.Ra" class="text-danger"></span>
                     </div>
-                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
+                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
+
                 </form>
             </div>
         </div>
     }
     else
     {
-        <h2>Experiment - 6 : Solar Cells - Series Connection Result</h2>
+        <h2>Experiment 6 : Solar Cells - Series Connection Result</h2>
         <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
@@ -182,44 +184,44 @@
             sessionStorage.setItem('finalCurrentSolarSeries', FinalCurrent);
             sessionStorage.setItem('finalResistanceSolarSeries', FinalResistance);
 
-            var xMaxRange = parseFloat(FinalCurrent[0]);
-            var yMaxRange = parseFloat(FinalVoltage[0]);
-            var xMinRange = parseFloat(FinalCurrent[0]);
-            var yMinRange = parseFloat(FinalVoltage[0]);
+            var xMaxRange = parseFloat(FinalVoltage[0]);
+            var yMaxRange = parseFloat(FinalCurrent[0]);
+            var xMinRange = parseFloat(FinalVoltage[0]);
+            var yMinRange = parseFloat(FinalCurrent[0]);
 
             var dataOne = [
-                [{ 'x': parseFloat(FinalCurrent[0]), 'y': parseFloat(FinalVoltage[0]) }]
+                [{ 'x': parseFloat(FinalVoltage[0]), 'y': parseFloat(FinalCurrent[0]) }]
 			];
 
             for (var i = 0; i < FinalCurrent.length; i++) {
-                if (yMaxRange < parseFloat(FinalVoltage[i])) {
-                    yMaxRange = parseFloat(FinalVoltage[i]);
+                if (yMaxRange < parseFloat(FinalCurrent[i])) {
+                    yMaxRange = parseFloat(FinalCurrent[i]);
                 }
-                if (yMinRange > parseFloat(FinalVoltage[i])) {
-                    yMinRange = parseFloat(FinalVoltage[i]);
+                if (yMinRange > parseFloat(FinalCurrent[i])) {
+                    yMinRange = parseFloat(FinalCurrent[i]);
                 }
 
-                if (xMaxRange < parseFloat(FinalCurrent[i])) {
-                    xMaxRange = parseFloat(FinalCurrent[i]);
+                if (xMaxRange < parseFloat(FinalVoltage[i])) {
+                    xMaxRange = parseFloat(FinalVoltage[i]);
                 }
-                if (xMinRange > parseFloat(FinalCurrent[i])) {
-                    xMinRange = parseFloat(FinalCurrent[i]);
+                if (xMinRange > parseFloat(FinalVoltage[i])) {
+                    xMinRange = parseFloat(FinalVoltage[i]);
                 }
 
                 dataOne[0].push({
-                    'x': parseFloat(FinalCurrent[i]),
-                    'y': parseFloat(FinalVoltage[i])
+                    'x': parseFloat(FinalVoltage[i]),
+                    'y': parseFloat(FinalCurrent[i])
 				});
 			}
 
             console.log(yMaxRange);
             console.log(yMinRange);
 
-            var graphOneXLabel = "Current";
-            var graphOneYLabel = "Voltage";
+            var graphOneXLabel = "Voltage (V)";
+            var graphOneYLabel = "Current (A)";
 
         </script>
-        
+
         <div class="row">
             <div class="col-md-4">
                 <form id="solarPanel" method="post">
@@ -247,9 +249,9 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Resistance</th>
-                            <th scope="col">Open Circuit Voltage</th>
-                            <th scope="col">Short Circuit Current</th>
-                            <th scope="col">Power</th>
+                            <th scope="col">Voltage (v)</th>
+                            <th scope="col">Current (A)</th>
+                            <th scope="col">Power (W)</th>
                         </tr>
                     </thead>
                     <tbody id="tablePrint"></tbody>
@@ -267,12 +269,12 @@
 
                     document.getElementById('tablePrint').innerHTML = myTable;
                 </script>
-                
+
             </div>
         </div>
         <div class="row" id="graphOne">
             <div class="col-md-5" id="graphOne">
-                <h3>Graph</h3>
+                <h3>Voltage Graph</h3>
                 <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
             </div>
         </div>
@@ -312,10 +314,14 @@
                     });
                 }
 
-                var graphTwoXLabel = "Voltage";
-                var graphTwoYLabel = "Power";
+                var graphTwoXLabel = "Voltage (V)";
+                var graphTwoYLabel = "Power (W)";
             </script>
             <script type="text/javascript" src="~/js/graph/graphTwo.js"></script>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
         </div>
     }
 }

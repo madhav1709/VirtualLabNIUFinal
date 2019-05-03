@@ -89,11 +89,11 @@ function onBtnClick() {
             }
         }
         if (ftotal == 7) {
-            alert('Congratulations!');
+            alert('Correct');
             var form = document.getElementById('buckConverter');
             form.submit();
         } else {
-            if (!alert('Please check the arrangement and try again!')) {
+            if (!alert('Incorrect, please try again.')) {
                 window.location.reload();
             }
         }

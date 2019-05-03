@@ -1,0 +1,11 @@
+﻿@font-face {
+    font-family: 'LucidaBri-DemIta';
+    src: url('/fonts/style_4906.eot');
+    src: url('/fonts/style_4906.eot?#iefix') format('embedded-opentype'),url('/fonts/style_4906.woff') format('woff'),url('/fonts/style_4906.ttf') format('truetype'),url('/fonts/style_4906.svg#LucidaBri-DemIta') format('svg');
+}
+
+@font-face {
+    font-family: 'LucidaBri-Dem';
+    src: url('/fonts/style_4904.eot');
+    src: url('/fonts/style_4904.eot?#iefix') format('embedded-opentype'),url('/fonts/woff/style_4904.woff') format('woff'),url('/fonts/style_4904.ttf') format('truetype'),url('/fonts/style_4904.svg#LucidaBri-Dem') format('svg');
+}

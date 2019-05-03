@@ -15,7 +15,7 @@
 @{
     if (Model.finalResult == null)
     {
-        <h2>Experiment - 2 : Buck Converter Closed</h2>
+        <h2>Experiment 2 : Buck Converter under Feedback Control</h2>
         <div class="row">
             <div class="col-md-8">
                 <div class="circuit-container js-circuit-container">
@@ -62,7 +62,9 @@
                         <input asp-for="Input.VO1" class="form-control" />
                         <span asp-validation-for="Input.VO1" class="text-danger"></span>
                     </div>
-                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
+                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
+
                 </form>
             </div>
             <div class="col-md-6">
@@ -72,13 +74,13 @@
     }
     else
     {
-        <h2>Experiment - 2 : Buck Converter Closed Result</h2>
+        <h2>Experiment 2 : Buck Converter under Feedback Control Result</h2>
         <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
             dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
             console.log(dataJSON);
-            
+
 			var Voltage = [];
             var TimeVoltage = [];
 
@@ -119,7 +121,7 @@
                     'y': Voltage[j]
 				});
 			}
-            
+
 
             var graphOneXLabel = "Time";
             var graphOneYLabel = "Voltage";
@@ -130,6 +132,10 @@
         <div class="row" id="graphOne">
             <h3>Voltage Graph</h3>
             <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
         </div>
     }
 }

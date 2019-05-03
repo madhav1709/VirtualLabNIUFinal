@@ -15,7 +15,7 @@
 @{
     if (Model.finalResult == null)
     {
-        <h2>Experiment - 4 : Solar Panel</h2>
+        <h2>Experiment-5 : Solar Panel</h2>
         <div class="row">
 
             <div class="col-md-8">
@@ -73,7 +73,9 @@
                         <input asp-for="Input.TaC" class="form-control" />
                         <span asp-validation-for="Input.TaC" class="text-danger"></span>
                     </div>
-                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
+                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
+
                 </form>
             </div>
         </div>
@@ -138,8 +140,8 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Irridiation</th>
-                            <th scope="col">Open Circuit Voltage</th>
-                            <th scope="col">Closed Circuit Current</th>
+                            <th scope="col">Open Circuit Voltage (V)</th>
+                            <th scope="col">Closed Circuit Current (A)</th>
                         </tr>
                     </thead>
                     <tbody id="tablePrint"></tbody>
@@ -147,7 +149,7 @@
                 <script language="javascript" type="text/javascript">
                     var myTable = "";
                     for (var i = 0; i < FinalCurrent.length; i++) {
-                        myTable += "<tr><th scope='row'>" + (i  + 1) + "</th>";
+                        myTable += "<tr><th scope='row'>" + (i + 1) + "</th>";
                         myTable += "<td>" + parseFloat(FinalIrridiation[i]) + "</td>";
                         myTable += "<td>" + parseFloat(FinalVoltage[i]) + "</td>";
                         myTable += "<td>" + parseFloat(FinalCurrent[i]) + "</td>";
@@ -159,6 +161,10 @@
                     document.getElementById('tablePrint').innerHTML = myTable;
                 </script>
             </div>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
         </div>
     }
 }

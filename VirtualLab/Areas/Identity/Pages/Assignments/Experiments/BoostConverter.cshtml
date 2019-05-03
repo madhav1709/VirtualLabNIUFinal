@@ -15,7 +15,7 @@
 @{
     if (Model.finalResult == null)
     {
-        <h2>Experiment - 3 : Boost Converter</h2>
+        <h2>Experiment 3 : Boost Converter</h2>
         <div class="row">
             <div class="col-md-8">
                 <div class="circuit-container js-circuit-container">
@@ -86,15 +86,9 @@
             <div class="col-md-4">
                 <form id="boostConverter" method="post">
                     <div class="form-group">
-                        <label asp-for="Input.Ru"></label>
-                        <input asp-for="Input.Ru" class="form-control" />
-                        <span asp-validation-for="Input.Ru" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="Input.Lu"></label>
-                        <input asp-for="Input.Lu" class="form-control" />
-                        <span asp-validation-for="Input.Lu" class="text-danger"></span>
+                        <label asp-for="Input.Vin"></label>
+                        <input asp-for="Input.Vin" class="form-control" />
+                        <span asp-validation-for="Input.Vin" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
@@ -110,9 +104,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Input.Vin"></label>
-                        <input asp-for="Input.Vin" class="form-control" />
-                        <span asp-validation-for="Input.Vin" class="text-danger"></span>
+                        <label asp-for="Input.Lu"></label>
+                        <input asp-for="Input.Lu" class="form-control" />
+                        <span asp-validation-for="Input.Lu" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Input.Ru"></label>
+                        <input asp-for="Input.Ru" class="form-control" />
+                        <span asp-validation-for="Input.Ru" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
@@ -121,7 +121,10 @@
                         <span asp-validation-for="Input.Fu" class="text-danger"></span>
                     </div>
 
-                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">
+                    <input type="button" class="btn btn-primary" onclick="onBtnClick()" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
+
+
                 </form>
             </div>
 
@@ -146,7 +149,7 @@
     }
     else
     {
-        <h2>Experiment - 3 : Boost Converter Result</h2>
+        <h2>Experiment 3 : Boost Converter Result</h2>
         <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
@@ -245,6 +248,10 @@
         <div class="row" id="graphTwo">
             <h3>Voltage graph</h3>
             <script type="text/javascript" src="~/js/graph/graphTwo.js"></script>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
         </div>
     }
 }
