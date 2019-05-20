@@ -74,12 +74,13 @@
     }
     else
     {
-        <h2>Experiment 2 : Buck Converter under Feedback Control Result</h2>
+        <h2>Experiment - 2 : Buck Converter under Feedback Control Result</h2>
         <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
             dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
             console.log(dataJSON);
+            //console.log(rsj);
 
 			var Voltage = [];
             var TimeVoltage = [];
@@ -89,7 +90,7 @@
             var xMinRange = dataJSON["Tic1"][0];
             var yMinRange = dataJSON["VoClosed1"][0][0];
 
-            for (var i = 0; i < 2500; i++) {
+            for (var i = 0; i < 10; i++) {
                 Voltage[i] = dataJSON["VoClosed1"][i][0];
                 console.log(Voltage[i]);
                 if (yMaxRange < Voltage[i]) {
@@ -114,8 +115,8 @@
                 [{ 'x': TimeVoltage[0], 'y': Voltage[0] }]
 			];
 
-            for (var j = 0; j < 2500; j++) {
-                console.log("Hello");
+            for (var j = 0; j < 15; j++) {
+                //console.log("Hello");
                 dataOne[0].push({
                     'x': TimeVoltage[j],
                     'y': Voltage[j]
@@ -131,11 +132,13 @@
 
         <div class="row" id="graphOne">
             <h3>Voltage Graph</h3>
+            <h4>Voltage(V)</h4>
             <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time(S)</h4>
         </div>
 
         <div class="row">
-            <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
+            <a class="btn btn-primary" href="/identity/assignments/experiments/buckconverterclosed" role="button">Go Back</a>
         </div>
     }
 }

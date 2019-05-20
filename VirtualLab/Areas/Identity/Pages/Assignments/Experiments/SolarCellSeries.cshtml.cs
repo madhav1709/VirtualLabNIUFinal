@@ -47,24 +47,30 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 		public void OnPost()
 		{
 			string JSONresult = JsonConvert.SerializeObject(Input);
+            //string rsj = JsonConvert.SerializeObject(Input);
+            System.Diagnostics.Debug.WriteLine(JSONresult);
 
 
-			const int portNumber = 6811;
-			const string hostName = "127.0.0.1";
+
+            const int portNumber = 8806;
+			//const string hostName = "";
 
 			try
 			{
-				TcpClient client = new TcpClient(hostName, portNumber);
+				TcpClient client = new TcpClient("127.0.0.1", portNumber);
 
-				// Translate the passed message into ASCII and store it as a Byte array.
-				Byte[] data = System.Text.Encoding.ASCII.GetBytes(JSONresult.ToString());
+                // Translate the passed message into ASCII and store it as a Byte array.
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes(JSONresult.ToString());
+                //String Name = "Madhav"; 
+                //Byte[] data = System.Text.Encoding.ASCII.GetBytes(Name.ToString());
+                Console.WriteLine(data);
 
-				// Get a client stream for reading and writing.
-				NetworkStream stream = client.GetStream();
+                // Get a client stream for reading and writing.
+                NetworkStream stream = client.GetStream();
 
-				// Send the message to the connected TcpServer. 
-				stream.Write(data, 0, data.Length);
-
+                // Send the message to the connected TcpServer. 
+                stream.Write(data,0,data.Length);
+                
 				Thread.Sleep(5000);
 
 				// Check to see if this NetworkStream is readable.

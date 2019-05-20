@@ -24,7 +24,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
             public double Ru { get; set; }
 
             [Required]
-            [Display(Name = "Inductance (μH)")]
+            [Display(Name = "Inductance (H)")]
             public double Lu { get; set; }
 
             [Required]
@@ -32,7 +32,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
             public double Du { get; set; }
 
             [Required]
-            [Display(Name = "Capacitance (μF)")]
+            [Display(Name = "Capacitance (F)")]
             public double Cu { get; set; }
 
             [Required]
@@ -40,7 +40,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
             public double Vin { get; set; }
 
             [Required]
-            [Display(Name = "Frequency (kHz)")]
+            [Display(Name = "Frequency (Hz)")]
             public double Fu { get; set; }
 
             public int r1 = 0;

@@ -154,6 +154,7 @@
             var dataJSON = "@Model.finalResult";
             dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
             console.log(dataJSON);
+            console.log(rsj);
 
             if (sessionStorage.getItem("finalVoltageSolarSeries") === null) {
                 var FinalVoltage = [];
@@ -321,7 +322,7 @@
         </div>
 
         <div class="row">
-            <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
+            <a class="btn btn-primary" href="/identity/assignments/experiments/solarcellseries" role="button">Go Back</a>
         </div>
     }
 }

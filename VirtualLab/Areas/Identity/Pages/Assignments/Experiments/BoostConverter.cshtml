@@ -15,7 +15,7 @@
 @{
     if (Model.finalResult == null)
     {
-        <h2>Experiment 3 : Boost Converter</h2>
+        <h2>Experiment - 3 : Boost Converter</h2>
         <div class="row">
             <div class="col-md-8">
                 <div class="circuit-container js-circuit-container">
@@ -149,7 +149,7 @@
     }
     else
     {
-        <h2>Experiment 3 : Boost Converter Result</h2>
+        <h2>Experiment - 3 : Boost Converter Result</h2>
         <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
@@ -164,7 +164,7 @@
             var xMinRange = dataJSON["T"][0];
             var yMinRange = dataJSON["I"][0];
 
-            for (var i = 0; i < 50000; i++) {
+            for (var i = 0; i < 125; i++) {
                 Current[i] = dataJSON["I"][i];
                 if (yMaxRange < Current[i]) {
                     yMaxRange = Current[i];
@@ -242,16 +242,20 @@
         </script>
         
         <div class="row" id="graphOne">
-            <h3>Current graph</h3>
+            <h3>Current graph</h3><br />
+            <h4>Current(A)</h4>
             <script type="text/javascript" src="~/js/graph/graphOne.js"></script>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time(S)</h4>
         </div>
         <div class="row" id="graphTwo">
-            <h3>Voltage graph</h3>
+            <h3>Voltage graph</h3><br />
+            <h4>Voltage(V)</h4>
             <script type="text/javascript" src="~/js/graph/graphTwo.js"></script>
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time(S)</h4>
         </div>
 
         <div class="row">
-            <a class="btn btn-primary" href="/identity/assignments" role="button">Go Back</a>
+            <a class="btn btn-primary" href="/identity/assignments/experiments/boostconverter" role="button">Go Back</a>
         </div>
     }
 }
