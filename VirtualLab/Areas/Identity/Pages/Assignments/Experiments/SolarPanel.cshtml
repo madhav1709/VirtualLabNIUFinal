@@ -85,36 +85,43 @@
         <h2>Experiment - 5 : Solar Panel Result</h2>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
-            dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
-
+            console.log(dataJSON);
+            var result = dataJSON.replace(/&#xA;/g, "");
+            console.log(result);
+            dataJSON = JSON.parse(result.replace(/&quot;/g, '"'));
+            //console.log(dataJSON);
             if (sessionStorage.getItem("finalVoltageSolarPanel") === null) {
                 var FinalVoltage = [];
                 var FinalCurrent = [];
                 var FinalIrridiation = [];
+                var FinalTemperature = [];
             }
 
             if (sessionStorage.getItem("finalVoltageSolarPanel") !== null) {
                 var FinalVoltage = sessionStorage['finalVoltageSolarPanel'].split(",");
                 var FinalCurrent = sessionStorage['finalCurrentSolarPanel'].split(",");
                 var FinalIrridiation = sessionStorage['finalIrridiationSolarPanel'].split(",");
+                var FinalTemperature = sessionStorage['finalTemperatureSolarPanel'].split(",");
 
                 sessionStorage.removeItem('finalVoltageSolarPanel');
                 sessionStorage.removeItem('finalCurrentSolarPanel');
                 sessionStorage.removeItem('finalIrridiationSolarPanel');
+                sessionStorage.removeItem('finalTemperatureSolarPanel');
             }
 
 
-            var Voltage = dataJSON["1"];
-            var Current = dataJSON["0"];
+            var Voltage = dataJSON["V"];
+            var Current = dataJSON["I"];
 
             FinalVoltage.push(Voltage);
             FinalCurrent.push(Current);
             FinalIrridiation.push(@Model.Input.Suns);
+            FinalTemperature.push(@Model.Input.TaC);
 
             sessionStorage.setItem('finalVoltageSolarPanel', FinalVoltage);
             sessionStorage.setItem('finalCurrentSolarPanel', FinalCurrent);
             sessionStorage.setItem('finalIrridiationSolarPanel', FinalIrridiation);
-
+            sessionStorage.setItem('finalTemperatureSolarPanel', FinalTemperature);
             console.log(sessionStorage['finalVoltageSolarPanel']);
         </script>
 
@@ -136,12 +143,15 @@
 
                 </form>
             </div>
+            <p>@Model.finalResult</p>
+            
             <div class="col-md-6" id="graphOne">
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Irridiation</th>
+                            <th scope="col">Temperature</th>
                             <th scope="col">Open Circuit Voltage (V)</th>
                             <th scope="col">Closed Circuit Current (A)</th>
                         </tr>
@@ -153,6 +163,7 @@
                     for (var i = 0; i < FinalCurrent.length; i++) {
                         myTable += "<tr><th scope='row'>" + (i + 1) + "</th>";
                         myTable += "<td>" + parseFloat(FinalIrridiation[i]) + "</td>";
+                        myTable += "<td>" + parseFloat(FinalTemperature[i]) + "</td>";
                         myTable += "<td>" + parseFloat(FinalVoltage[i]) + "</td>";
                         myTable += "<td>" + parseFloat(FinalCurrent[i]) + "</td>";
                         myTable += "</tr>";

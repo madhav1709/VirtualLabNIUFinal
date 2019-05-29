@@ -52,12 +52,12 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 
 
 
-            const int portNumber = 8806;
+            const int portNumber = 8805;
 			//const string hostName = "";
 
 			try
 			{
-				TcpClient client = new TcpClient("127.0.0.1", portNumber);
+				TcpClient client = new TcpClient("10.158.160.48", portNumber);
 
                 // Translate the passed message into ASCII and store it as a Byte array.
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(JSONresult.ToString());

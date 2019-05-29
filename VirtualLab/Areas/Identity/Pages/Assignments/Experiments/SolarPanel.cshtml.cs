@@ -27,7 +27,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 			[Display(Name = "Temperature (°C)")]
 			public double TaC { get; set; }
 
-			public double Ra = 10;
+			public double Ra = 50;
 
 			public double Va = 0.0001;
 
@@ -47,7 +47,7 @@ namespace VirtualLab.Areas.Identity.Pages.Assignments.Experiments
 			string JSONresult = JsonConvert.SerializeObject(Input);
 
 
-			const int portNumber = 6811;
+			const int portNumber = 8805;
 			const string hostName = "127.0.0.1";
 
 			try

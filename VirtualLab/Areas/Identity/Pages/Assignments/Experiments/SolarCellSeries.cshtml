@@ -152,9 +152,10 @@
         <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
-            dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
-            console.log(dataJSON);
-            console.log(rsj);
+            var result = dataJSON.replace(/&#xA;/g, "");
+            console.log(result);
+            dataJSON = JSON.parse(result.replace(/&quot;/g, '"'));
+            
 
             if (sessionStorage.getItem("finalVoltageSolarSeries") === null) {
                 var FinalVoltage = [];
@@ -173,8 +174,8 @@
             }
 
 
-            var Voltage = dataJSON["1"];
-            var Current = dataJSON["0"];
+            var Voltage = dataJSON["V"];
+            var Current = dataJSON["I"];
             console.log(Voltage);
 
             FinalVoltage.push(Voltage);
@@ -244,6 +245,7 @@
                     <input type="submit" class="btn btn-primary" value="Submit">
                 </form>
             </div>
+            <p>@Model.finalResult</p>
             <div class="col-md-6">
                 <table class="table">
                     <thead>
