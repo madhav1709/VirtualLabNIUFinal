@@ -152,7 +152,10 @@
         <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
         <script type="text/javascript">
             var dataJSON = "@Model.finalResult";
-            dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
+            //dataJSON = JSON.parse(dataJSON.replace(/&quot;/g, '"'));
+            var result = dataJSON.replace(/&#xA;/g, "");
+            console.log(result);
+            dataJSON = JSON.parse(result.replace(/&quot;/g, '"'));
 
             if (sessionStorage.getItem("finalVoltageSolarParallel") === null) {
                 var FinalVoltage = [];
@@ -171,8 +174,8 @@
             }
 
 
-            var Voltage = dataJSON["1"];
-            var Current = dataJSON["0"];
+            var Voltage = dataJSON["V"];
+            var Current = dataJSON["I"];
 
             FinalVoltage.push(Voltage);
             FinalCurrent.push(Current);
