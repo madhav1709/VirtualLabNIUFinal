@@ -159,12 +159,12 @@
             var Current = [];
             var TimeCurrent = [];
 
-            let xMaxRange = dataJSON["T"][0];
-            let yMaxRange = dataJSON["I"][0];
+            var xMaxRange = dataJSON["T"][0];
+            var yMaxRange = dataJSON["I"][0];
             var xMinRange = dataJSON["T"][0];
             var yMinRange = dataJSON["I"][0];
 
-            for (var i = 0; i < 90; i++) {
+            for (var i = 0; i < 50000; i++) {
                 Current[i] = dataJSON["I"][i];
                 if (yMaxRange < Current[i]) {
                     yMaxRange = Current[i];
@@ -186,7 +186,7 @@
                 [{ 'x': TimeCurrent[0], 'y': Current[0] }]
             ];
 
-            for (var j = 0; j < 900; j++) {
+            for (var j = 0; j < 50000; j++) {
                 dataOne[0].push({
                     'x': TimeCurrent[j],
                     'y': Current[j]
