@@ -164,7 +164,7 @@
             var xMinRange = dataJSON["T"][0];
             var yMinRange = dataJSON["I"][0];
 
-            for (var i = 0; i < 75; i++) {
+            for (var i = 0; i < 15; i++) {
                 Current[i] = dataJSON["I"][i];
                 if (yMaxRange < Current[i]) {
                     yMaxRange = Current[i];
@@ -191,7 +191,7 @@
                 [{ 'x': TimeCurrent[0], 'y': Current[0] }]
             ];
 
-            for (var j = 0; j < 75; j++) {
+            for (var j = 0; j < 15; j++) {
                 dataOne[0].push({
                     'x': TimeCurrent[j],
                     'y': Current[j]
